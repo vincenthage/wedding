@@ -56,13 +56,7 @@
   .corner.tr{top:14px; right:14px; border-left:none; border-bottom:none;}
   .corner.bl{bottom:14px; left:14px; border-right:none; border-top:none;}
   .corner.br{bottom:14px; right:14px; border-left:none; border-top:none;}
-  /* Inner line work */
-  .lines:before, .lines:after{
-    content:"";
-    position:absolute; top:50%; left:0; right:0; height:2px; transform:translateY(-50%);
-    background:linear-gradient(to right, transparent 0%, var(--gold) 20%, var(--gold2) 50%, var(--gold) 80%, transparent 100%);
-    opacity:.8;
-  }
+
   .lines:after{
     top:unset; bottom:120px; height:1px; opacity:.55;
   }
@@ -133,10 +127,6 @@
           <path d="M200 2 V22" stroke="#D4AF37" stroke-width="2"/>
         </svg>
       </header>
-
-      <div class="panel">
-        Join us for a weekend of sparkle and elegance as we celebrate our marriage in château surrounds.
-      </div>
 
       <div class="embed">
         <!-- Tally embed — the script below appends your query string to preserve hidden fields -->
