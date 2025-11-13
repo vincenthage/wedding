@@ -1,153 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Parniyan & Vincent — RSVP</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parniyan & Vincent — Celebration Weekend</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Forum&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --black:#0b0b0c;
-    --ivory:#FAF7EF;
-    --gold:#D4AF37;
-    --gold2:#B08D2E;
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#2b324d',
+          powder: '#6a7fad',
+          periwinkle: '#bfc6df',
+          lavender: '#e6e3f3',
+          cream: '#f6f3ee',
+          gold: '#b7a78f'
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'serif'],
+          display: ['"Cinzel Decorative"', 'serif'],
+          script: ['"Great Vibes"', 'cursive'],
+          sans: ['Raleway', 'sans-serif']
+        },
+        boxShadow: {
+          card: '0 25px 55px rgba(43, 50, 77, 0.08)'
+        }
+      }
+    }
   }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    background:var(--black);
-    color:var(--ivory);
-    font-family:"Cormorant Garamond", serif;
-    line-height:1.45;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  .wrap{
-    max-width:980px;
-    margin:4rem auto;
-    padding:0 1rem;
-  }
-  .frame{
-    position:relative;
-    background:linear-gradient(180deg, rgba(212,175,55,0.03), rgba(212,175,55,0.01)), var(--black);
-    padding:3.5rem 2.5rem;
-    overflow:hidden;
-  }
-  /* Outer Deco border */
-  .frame{ 
-    box-shadow:
-      0 0 0 2px var(--gold),
-      0 0 0 10px rgba(212,175,55,0.15),
-      inset 0 0 0 2px var(--gold);
-  }
-  .frame::before, .frame::after{
-    content:"";
-    position:absolute; left:28px; right:28px; height:2px;
-    background:
-      linear-gradient(to right, transparent, var(--gold) 18%, var(--gold2) 50%, var(--gold) 82%, transparent);
-  }
-  .frame::before{ top:28px; }
-  .frame::after{ bottom:28px; }
-  /* Corner braces */
-  .corner{position:absolute; width:78px; height:78px; border:2px solid var(--gold);}
-  .corner.tl{top:14px; left:14px; border-right:none; border-bottom:none;}
-  .corner.tr{top:14px; right:14px; border-left:none; border-bottom:none;}
-  .corner.bl{bottom:14px; left:14px; border-right:none; border-top:none;}
-  .corner.br{bottom:14px; right:14px; border-left:none; border-top:none;}
-
-  .lines:after{
-    top:unset; bottom:120px; height:1px; opacity:.55;
-  }
-  header{
-    text-align:center;
-    margin-bottom:2.2rem;
-  }
-  .monogram{
-    width:84px; height:84px; display:inline-grid; place-items:center;
-    border:2px solid var(--gold); border-radius:18px;
-    margin:0 auto 1rem auto; position:relative;
-  }
-  .monogram::after,.monogram::before{
-    content:""; position:absolute; width:16px; height:16px; border:1.5px solid var(--gold);
-  }
-  .monogram::before{top:-10px; left:-10px; border-right:none; border-bottom:none;}
-  .monogram::after{bottom:-10px; right:-10px; border-left:none; border-top:none;}
-  .monogram span{
-    font-family:"Cinzel Decorative", serif; font-weight:700; letter-spacing:.06em; color:var(--gold);
-    font-size:28px;
-  }
-  h1{
-    font-family:"Cinzel Decorative", serif;
-    font-size:clamp(28px, 4vw, 48px);
-    letter-spacing:.06em; text-transform:uppercase; margin:0 0 .2rem;
-    color:var(--gold);
-  }
-  .tag{
-    text-transform:uppercase; letter-spacing:.18em; font-size:.9rem; opacity:.9; margin-top:.25rem;
-  }
-  .divider{
-    margin:1.4rem auto 2rem auto; width:240px; height:28px; display:block;
-  }
-  .panel{
-    max-width:820px; margin:0 auto 1.8rem auto; text-align:center; font-size:1.05rem;
-  }
-  .embed{
-    max-width:820px; margin:0 auto; border:1.5px solid var(--gold); padding:.5rem;
-    background:rgba(212,175,55,0.03);
-  }
-  iframe{ width:100%; height:1200px; border:0; background:transparent; }
-  footer{
-    text-align:center; opacity:.75; font-size:.95rem; margin-top:1.6rem;
-  }
-  @media (max-width: 720px){
-    .frame{padding:2.2rem 1.1rem;}
-    .frame::before,.frame::after{left:18px; right:18px}
-    .corner{width:52px; height:52px}
-    iframe{ height:1400px; }
-  }
-</style>
+</script>
 </head>
-<body>
-  <div class="wrap">
-    <div class="frame lines">
-      <span class="corner tl"></span>
-      <span class="corner tr"></span>
-      <span class="corner bl"></span>
-      <span class="corner br"></span>
-
-      <header>
-        <div class="monogram" aria-hidden="true"><span>PV</span></div>
-        <h1>Parniyan &amp; Vincent</h1>
-        <div class="tag">Château Celebration • 17–19 June 2026</div>
-        <svg class="divider" viewBox="0 0 400 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <path d="M0 12H150M250 12H400" stroke="#D4AF37" stroke-width="2"/>
-          <path d="M200 2 L215 12 L200 22 L185 12 Z" fill="#D4AF37"/>
-          <path d="M200 2 V22" stroke="#D4AF37" stroke-width="2"/>
-        </svg>
-      </header>
-
-      <div class="embed">
-        <!-- Tally embed — the script below appends your query string to preserve hidden fields -->
-        <iframe id="tallyFrame" title="RSVP form"></iframe>
-      </div>
-
-      <footer>
-        Kindly RSVP by <strong>15 April 2026</strong>. Dress code: Gatsby chic in a royal setting.
-      </footer>
-    </div>
+<body class="min-h-screen font-serif text-ink bg-cream bg-[url('grainy.png')] bg-repeat relative">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-white px-4 py-2 rounded-md z-50">Skip to content</a>
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute inset-0 opacity-70" style="background:radial-gradient(circle at 12% 20%, rgba(191,199,178,.35), transparent 55%), radial-gradient(circle at 85% 25%, rgba(206,181,160,.25), transparent 60%), radial-gradient(circle at 25% 80%, rgba(153,178,153,.2), transparent 55%);"></div>
+  </div>
+  <div class="edge-flowers pointer-events-none fixed inset-0 -z-10 flex justify-between" aria-hidden="true">
+    <span class="w-28 bg-[url('flower_border.png')] bg-repeat-y bg-contain opacity-60 drop-shadow-xl ml-4"></span>
+    <span class="w-28 bg-[url('flower_border.png')] bg-repeat-y bg-contain opacity-60 drop-shadow-xl mr-4" style="transform:scaleX(-1);"></span>
   </div>
 
-<script>
-  (function(){
-    // EDIT THIS: your Tally form share link (without parameters)
-    var TALLY_BASE = "https://tally.so/r/me4zkO";
-    // Keep guest-specific hidden fields by passing through the URL query string
-    var qs = window.location.search || "";
-    var url = TALLY_BASE + (qs ? qs : "");
-    document.getElementById("tallyFrame").src = url;
-  })();
-</script>
+  <div class="site-wrap relative max-w-5xl mx-auto px-4 sm:px-10 pb-20 pt-10">
+    <header class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/15 pb-6 mb-6">
+      <p class="font-display tracking-[0.6em] text-xs uppercase text-powder">PV</p>
+      <nav class="flex gap-6 text-sm uppercase tracking-[0.3em] text-ink/70 font-sans">
+        <a href="#garre-hello" class="hover:text-powder transition">Weekend</a>
+        <a href="#garre-events" class="hover:text-powder transition">Events</a>
+        <a href="#garre-travel" class="hover:text-powder transition">Travel</a>
+        <a href="#garre-rsvp" class="hover:text-powder transition">RSVP</a>
+      </nav>
+    </header>
+    <main id="main" class="space-y-16">
+      <div class="venue is-active space-y-16" id="venue-garre">
+        <section id="garre-cover" class="hero relative px-6 sm:px-14 py-16 text-center">
+          <img src="title_flowers.png" alt="" aria-hidden="true" class="mx-auto mb-8 w-48 sm:w-60 opacity-90">
+          <p class="font-script text-3xl text-powder">An intimate celebration</p>
+          <h1 class="mt-4 text-4xl sm:text-5xl font-display tracking-[0.35em] uppercase">Parniyan &amp; Vincent</h1>
+          <p class="hero-date mt-6 text-lg tracking-[0.35em] uppercase font-sans">17 • 18 • 19 June 2026</p>
+          <p class="hero-sub mt-4 text-base text-ink/80">A watercolor weekend in the French countryside</p>
+          <div class="countdown font-sans mt-8 flex items-center justify-center gap-3 text-sm uppercase tracking-[0.2em] text-powder">
+            <span class="px-3 py-1 rounded-full bg-periwinkle/30">00d</span>
+            <span class="px-3 py-1 rounded-full bg-periwinkle/30">00h</span>
+            <span class="px-3 py-1 rounded-full bg-periwinkle/30">00m</span>
+            <span class="px-3 py-1 rounded-full bg-periwinkle/30">00s</span>
+          </div>
+        </section>
+        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto w-28 opacity-80">
+
+        <section id="garre-hello" class="space-y-4">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Hello</h2>
+          <p class="text-lg leading-relaxed">We cannot wait to gather our favorite people for a long watercolor weekend in the French countryside. Expect sun-drenched gardens, candlelit dinners, and plenty of time to reconnect. Below you’ll find the weekend plan, where to stay, and travel notes to make everything easy.</p>
+        </section>
+
+        <section id="garre-stories" class="space-y-6">
+          <div class="flex items-center gap-4">
+            <img src="pv.svg" alt="PV Monogram" class="h-10 w-10" />
+            <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Our Story</h2>
+          </div>
+          <div class="stories-grid grid gap-6 sm:grid-cols-2">
+            <article class="story-card rounded-3xl overflow-hidden border border-ink/10 bg-white/70">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=60" alt="Couple smiling at the coast" class="h-56 w-full object-cover">
+              <span class="block px-6 py-4 tracking-[0.3em] uppercase text-xs">New York to London</span>
+            </article>
+            <article class="story-card rounded-3xl overflow-hidden border border-ink/10 bg-white/70">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=60" alt="Evening city view" class="h-56 w-full object-cover">
+              <span class="block px-6 py-4 tracking-[0.3em] uppercase text-xs">First Date</span>
+            </article>
+            <article class="story-card rounded-3xl overflow-hidden border border-ink/10 bg-white/70">
+              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=60" alt="Hands with ring" class="h-56 w-full object-cover">
+              <span class="block px-6 py-4 tracking-[0.3em] uppercase text-xs">She said yes</span>
+            </article>
+            <article class="story-card rounded-3xl overflow-hidden border border-ink/10 bg-white/70">
+              <img src="https://images.unsplash.com/photo-1445053023192-8d45cb66099d?auto=format&fit=crop&w=800&q=60" alt="French seaside town" class="h-56 w-full object-cover">
+              <span class="block px-6 py-4 tracking-[0.3em] uppercase text-xs">Cassis summers</span>
+            </article>
+            <article class="story-card rounded-3xl overflow-hidden border border-ink/10 bg-white/70">
+              <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=60" alt="London skyline" class="h-56 w-full object-cover">
+              <span class="block px-6 py-4 tracking-[0.3em] uppercase text-xs">Home in London</span>
+            </article>
+            <article class="story-card rounded-3xl overflow-hidden border border-ink/10 bg-white/70">
+              <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=60" alt="City rooftops at sunset" class="h-56 w-full object-cover">
+              <span class="block px-6 py-4 tracking-[0.3em] uppercase text-xs">Thank you!</span>
+            </article>
+          </div>
+        </section>
+
+        <section id="garre-party" class="space-y-8">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Wedding Party</h2>
+          <div class="mt-8 grid gap-10 md:grid-cols-2">
+            <div class="space-y-5">
+              <h3 class="font-sans text-lg tracking-[0.3em] uppercase">Bridesmaids</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-4 rounded-2xl border border-ink/10 p-3 bg-white/80">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=60" alt="Bridesmaid portrait" class="h-16 w-16 rounded-full object-cover">
+                  <div>
+                    <strong class="block text-lg">Olivia</strong>
+                    <span class="text-sm text-ink/70">Sister &amp; Maid of Honor</span>
+                  </div>
+                </li>
+                <li class="flex items-center gap-4 rounded-2xl border border-ink/10 p-3 bg-white/80">
+                  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=60" alt="Sophia" class="h-16 w-16 rounded-full object-cover">
+                  <div>
+                    <strong class="block text-lg">Sophia</strong>
+                    <span class="text-sm text-ink/70">Bridesmaid</span>
+                  </div>
+                </li>
+                <li class="flex items-center gap-4 rounded-2xl border border-ink/10 p-3 bg-white/80">
+                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=60" alt="Karina" class="h-16 w-16 rounded-full object-cover">
+                  <div>
+                    <strong class="block text-lg">Karina</strong>
+                    <span class="text-sm text-ink/70">Bridesmaid</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-5">
+              <h3 class="font-sans text-lg tracking-[0.3em] uppercase">Groomsmen</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-4 rounded-2xl border border-ink/10 p-3 bg-white/80">
+                  <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=60" alt="Lucas" class="h-16 w-16 rounded-full object-cover">
+                  <div>
+                    <strong class="block text-lg">Lucas</strong>
+                    <span class="text-sm text-ink/70">Best Man</span>
+                  </div>
+                </li>
+                <li class="flex items-center gap-4 rounded-2xl border border-ink/10 p-3 bg-white/80">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=60" alt="Adam" class="h-16 w-16 rounded-full object-cover">
+                  <div>
+                    <strong class="block text-lg">Adam</strong>
+                    <span class="text-sm text-ink/70">Groomsman</span>
+                  </div>
+                </li>
+                <li class="flex items-center gap-4 rounded-2xl border border-ink/10 p-3 bg-white/80">
+                  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=60" alt="Ethan" class="h-16 w-16 rounded-full object-cover">
+                  <div>
+                    <strong class="block text-lg">Ethan</strong>
+                    <span class="text-sm text-ink/70">Groomsman</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="garre-events" class="space-y-10">
+          <div class="space-y-8">
+            <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Order of the Day</h2>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2">
+              <div class="rounded-2xl border border-ink/10 p-4 text-center">
+                <div class="text-3xl">💍</div>
+                <div class="mt-2 text-sm tracking-[0.35em] uppercase">17:00 Wed</div>
+                <p class="mt-1 text-lg">Arrivals &amp; check-in</p>
+              </div>
+              <div class="rounded-2xl border border-ink/10 p-4 text-center">
+                <div class="text-3xl">🥂</div>
+                <div class="mt-2 text-sm tracking-[0.35em] uppercase">18:00 Wed</div>
+                <p class="mt-1 text-lg">Welcome Drinks</p>
+              </div>
+              <div class="rounded-2xl border border-ink/10 p-4 text-center">
+                <div class="text-3xl">⛪</div>
+                <div class="mt-2 text-sm tracking-[0.35em] uppercase">16:00 Thu</div>
+                <p class="mt-1 text-lg">Ceremony &amp; Reception</p>
+              </div>
+              <div class="rounded-2xl border border-ink/10 p-4 text-center">
+                <div class="text-3xl">🍽️</div>
+                <div class="mt-2 text-sm tracking-[0.35em] uppercase">20:00 Thu</div>
+                <p class="mt-1 text-lg">Candlelit dinner</p>
+              </div>
+              <div class="rounded-2xl border border-ink/10 p-4 text-center">
+                <div class="text-3xl">💃</div>
+                <div class="mt-2 text-sm tracking-[0.35em] uppercase">22:30 Thu</div>
+                <p class="mt-1 text-lg">Dancing in the orangery</p>
+              </div>
+              <div class="rounded-2xl border border-ink/10 p-4 text-center">
+                <div class="text-3xl">☕</div>
+                <div class="mt-2 text-sm tracking-[0.35em] uppercase">12:00 Fri</div>
+                <p class="mt-1 text-lg">Poolside brunch farewell</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Events</h2>
+            <div class="events-list space-y-6">
+              <article class="event-card rounded-[2.2rem] border border-ink/10 bg-white/80 p-6 shadow-card flex flex-col gap-4 sm:flex-row">
+                <div class="event-date shrink-0 rounded-2xl bg-lavender/60 px-6 py-4 text-center text-sm uppercase tracking-[0.35em]">Wed 17 Jun<br>18:00 CEST</div>
+                <div class="event-info space-y-3">
+                  <h4 class="text-2xl font-display tracking-[0.25em] uppercase">Welcome Drinks</h4>
+                  <div class="event-meta text-sm text-ink/70">Château gardens • Relaxed summer chic</div>
+                  <p>Casual cocktails in the gardens. Arrive, unwind, and watch the sunset together.</p>
+                  <div class="event-actions">
+                    <button type="button" class="inline-flex items-center justify-center rounded-full bg-powder px-5 py-2 text-xs font-sans uppercase tracking-[0.35em] text-white" data-ics data-title="Welcome Drinks — Parniyan & Vincent" data-start="20260617T160000Z" data-end="20260617T180000Z" data-location="Château de Garrevaques" data-description="Casual cocktails beneath the linden trees. Dress: relaxed summer chic.">Add to Calendar</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event-card rounded-[2.2rem] border border-ink/10 bg-white/80 p-6 shadow-card flex flex-col gap-4 sm:flex-row">
+                <div class="event-date shrink-0 rounded-2xl bg-lavender/60 px-6 py-4 text-center text-sm uppercase tracking-[0.35em]">Thu 18 Jun<br>16:00 CEST</div>
+                <div class="event-info space-y-3">
+                  <h4 class="text-2xl font-display tracking-[0.25em] uppercase">Ceremony &amp; Reception</h4>
+                  <div class="event-meta text-sm text-ink/70">Chapel • Terrace dinner • Orangery dancing</div>
+                  <p>Vows in the chapel, a candlelit feast, and dancing late into the night. Garden-formal in soft pastels (black tie optional). Please avoid sharp stilettos.</p>
+                  <div class="event-actions">
+                    <button type="button" class="inline-flex items-center justify-center rounded-full bg-powder px-5 py-2 text-xs font-sans uppercase tracking-[0.35em] text-white" data-ics data-title="Ceremony & Reception — Parniyan & Vincent" data-start="20260618T140000Z" data-end="20260618T230000Z" data-location="Château de Garrevaques" data-description="Ceremony in the chapel, dinner on the terrace, dancing in the orangery.">Add to Calendar</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event-card rounded-[2.2rem] border border-ink/10 bg-white/80 p-6 shadow-card flex flex-col gap-4 sm:flex-row">
+                <div class="event-date shrink-0 rounded-2xl bg-lavender/60 px-6 py-4 text-center text-sm uppercase tracking-[0.35em]">Fri 19 Jun<br>12:00 CEST</div>
+                <div class="event-info space-y-3">
+                  <h4 class="text-2xl font-display tracking-[0.25em] uppercase">Poolside Brunch</h4>
+                  <div class="event-meta text-sm text-ink/70">Pool &amp; courtyard • Light summer attire</div>
+                  <p>Coffee, fresh pastries, and a gentle goodbye (or a hello to your extended holiday!).</p>
+                  <div class="event-actions">
+                    <button type="button" class="inline-flex items-center justify-center rounded-full bg-powder px-5 py-2 text-xs font-sans uppercase tracking-[0.35em] text-white" data-ics data-title="Poolside Brunch — Parniyan & Vincent" data-start="20260619T100000Z" data-end="20260619T120000Z" data-location="Château de Garrevaques" data-description="Farewell brunch by the pool and courtyard.">Add to Calendar</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <p class="text-base text-ink/80">Think garden-formal meets soft Regency pastels: sage, blush, dove grey, champagne, muted gold. Light suits or classic tuxes are welcome. Flowy dresses and comfortable block heels or wedges preferred for the lawn.</p>
+          </div>
+        </section>
+
+        <section id="garre-travel" class="space-y-8">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Location</h2>
+          <figure class="location-figure text-center">
+            <img src="garrevaques.png" alt="Watercolor of Château de Garrevaques" class="mx-auto w-full rounded-[2rem] border border-ink/10">
+            <figcaption class="mt-3 text-sm uppercase tracking-[0.3em]">Château de Garrevaques</figcaption>
+          </figure>
+          <div class="travel-grid grid gap-5 md:grid-cols-2">
+            <article class="rounded-2xl border border-ink/10 bg-white/60 p-5">
+              <h3 class="font-sans uppercase tracking-[0.25em] text-sm">Accommodation</h3>
+              <p class="mt-2">24 rooms are reserved at the château for our guests. We’ll share booking details privately. Local villages have lovely hotels and gîtes if you prefer.</p>
+            </article>
+            <article class="rounded-2xl border border-ink/10 bg-white/60 p-5">
+              <h3 class="font-sans uppercase tracking-[0.25em] text-sm">Air &amp; Train</h3>
+              <p class="mt-2">Toulouse (TLS) is the main hub; Carcassonne (CCF) often has budget flights; Castres–Mazamet (DCM) is the closest regional airport. SNCF/TGV to Toulouse, then car hire or a pre-booked transfer to the château.</p>
+            </article>
+            <article class="rounded-2xl border border-ink/10 bg-white/60 p-5">
+              <h3 class="font-sans uppercase tracking-[0.25em] text-sm">Driving</h3>
+              <p class="mt-2">We’re near Revel with on-site parking. Let us know if you need a driver or shuttle.</p>
+            </article>
+            <article class="rounded-2xl border border-ink/10 bg-white/60 p-5">
+              <h3 class="font-sans uppercase tracking-[0.25em] text-sm">Gifts &amp; RSVP</h3>
+              <p class="mt-2">Your presence is the gift. Please use the RSVP form for dietary or mobility notes and to contribute to the registry or honeymoon fund if you wish.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="garre-guide" class="space-y-4">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Local Guide</h2>
+          <ul class="guide-list mt-4 space-y-2 list-disc list-inside">
+            <li>Wander Revel’s market and snack on fresh brioche.</li>
+            <li>Cycle a stretch of the Canal du Midi.</li>
+            <li>Picnic among sunflowers and lavender fields.</li>
+            <li>Day trip to Toulouse or Carcassonne for culture and cassoulet.</li>
+          </ul>
+        </section>
+
+        <section id="garre-photos" class="text-center space-y-6">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Photos</h2>
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] uppercase">Highlights</h3>
+          <p class="mt-4 text-lg">We’ll upload highlights throughout the weekend. You’ll also find a QR code on the day to drop your candid photos into a shared album.</p>
+          <a href="#" class="mt-6 inline-flex items-center justify-center rounded-full border border-powder px-6 py-2 text-xs uppercase tracking-[0.4em] text-powder">Launch Gallery</a>
+        </section>
+
+        <section id="garre-gifts" class="space-y-4">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">Gifts</h2>
+          <p>Your presence is the greatest gift. If you wish to contribute, we’ll share a small registry and a honeymoon fund—absolutely no obligation.</p>
+          <ul class="gifts-list divide-y divide-ink/10 rounded-2xl border border-ink/10">
+            <li class="flex items-center justify-between gap-4 px-5 py-3">
+              <span class="tracking-[0.3em] uppercase text-xs">Registry</span>
+              <a href="#" class="text-gold text-xs uppercase tracking-[0.4em]">Open</a>
+            </li>
+            <li class="flex items-center justify-between gap-4 px-5 py-3">
+              <span class="tracking-[0.3em] uppercase text-xs">Honeymoon Fund</span>
+              <a href="#" class="text-gold text-xs uppercase tracking-[0.4em]">Open</a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="garre-rsvp" class="space-y-6">
+          <h2 class="font-sans text-xs uppercase tracking-[0.45em] text-powder">RSVP</h2>
+          <p class="mt-4 text-lg">Kindly RSVP by 31 March 2026. The form tailors itself automatically to reflect the details we have for you.</p>
+          <div class="rsvp-embed mt-8 overflow-hidden rounded-[2rem]">
+            <iframe id="tallyFrame" title="RSVP form" loading="lazy" class="w-full min-h-[960px] border-0 bg-transparent"></iframe>
+          </div>
+          <p class="rsvp-note mt-4 text-center text-xs uppercase tracking-[0.35em] text-powder font-sans">Need help? Email <a href="mailto:wedding@pv.love" class="underline">wedding@pv.love</a>.</p>
+
+          <div class="faq mt-8 space-y-4">
+            <details class="rounded-2xl border border-ink/10 bg-white/80 p-4">
+              <summary class="font-sans cursor-pointer text-xs uppercase tracking-[0.35em]">Kids?</summary>
+              <p class="mt-2">Numbers are limited—please check your invitation.</p>
+            </details>
+            <details class="rounded-2xl border border-ink/10 bg-white/80 p-4">
+              <summary class="font-sans cursor-pointer text-xs uppercase tracking-[0.35em]">Plus-ones?</summary>
+              <p class="mt-2">We’re keeping things intimate, so plus-ones are by invitation.</p>
+            </details>
+            <details class="rounded-2xl border border-ink/10 bg-white/80 p-4">
+              <summary class="font-sans cursor-pointer text-xs uppercase tracking-[0.35em]">Weather?</summary>
+              <p class="mt-2">Warm days and cooler evenings; pack a light layer for dinner on the terrace.</p>
+            </details>
+            <details class="rounded-2xl border border-ink/10 bg-white/80 p-4">
+              <summary class="font-sans cursor-pointer text-xs uppercase tracking-[0.35em]">Photos?</summary>
+              <p class="mt-2">Please feel free to take photos after the ceremony. Hashtag coming soon.</p>
+            </details>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto mt-10 w-24 opacity-70">
+
+    <footer class="mt-6 text-center text-xs uppercase tracking-[0.35em] text-ink/70 space-y-2 font-sans">
+      <p><a href="mailto:wedding@pv.love" class="underline">wedding@pv.love</a> • Map &amp; details forthcoming</p>
+      <p>&copy; 06.26 Parniyan &amp; Vincent</p>
+    </footer>
+  </div>
+
+  <button data-sticky-rsvp class="sticky-rsvp fixed right-6 bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card">RSVP</button>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
