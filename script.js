@@ -1,7 +1,14 @@
 (function(){
   // Countdown timers
   function startCountdown(el){
-    const target = new Date(el.dataset.countdown);
+    const targetAttr = el.dataset.countdown;
+    if(!targetAttr){
+      return;
+    }
+    const target = new Date(targetAttr);
+    if(Number.isNaN(target.getTime())){
+      return;
+    }
     function tick(){
       const now = new Date();
       const diff = target - now;
@@ -75,7 +82,13 @@
     tallyFrame.src = url;
   }
 
-  document.querySelector('[data-sticky-rsvp]').addEventListener('click', ()=>{
-    document.querySelector('#garre-rsvp').scrollIntoView({behavior:'smooth'});
-  });
+  const stickyButton = document.querySelector('[data-sticky-rsvp]');
+  if(stickyButton){
+    stickyButton.addEventListener('click', ()=>{
+      const rsvpSection = document.querySelector('#garre-rsvp');
+      if(rsvpSection){
+        rsvpSection.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  }
 })();
