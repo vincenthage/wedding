@@ -6,7 +6,7 @@
 <title>Parniyan & Vincent — Celebration Wedding</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Parisienne:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script src="tailwind.js"></script>
 <script>
   tailwind.config = {
     theme: {
@@ -38,19 +38,19 @@
   <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
     <div class="absolute inset-0 opacity-70" style="background:radial-gradient(circle at 12% 20%, rgba(191,199,178,.35), transparent 55%), radial-gradient(circle at 85% 25%, rgba(206,181,160,.25), transparent 60%), radial-gradient(circle at 25% 80%, rgba(153,178,153,.2), transparent 55%);"></div>
   </div>
-  <div class="page-frame min-h-screen flex justify-center px-2 sm:px-4 pt-6 pb-6">
-    <div class="frame-shell relative w-full max-w-7xl rounded-[2.5rem] bg-cream/95 px-2 sm:px-4 lg:px-6 py-8 shadow-[0_25px_75px_rgba(43,50,77,0.18)]">
+  <div class="page-frame min-h-screen flex justify-center px-4 sm:px-5 pt-6 pb-6">
+    <div class="frame-shell relative w-full max-w-7xl rounded-[2.5rem] bg-cream/95 px-4 sm:px-5 lg:px-6 py-8 shadow-[0_25px_75px_rgba(43,50,77,0.18)]">
       <div class="edge-flowers pointer-events-none absolute top-3 bottom-6 left-0 right-0 flex justify-between" aria-hidden="true">
-        <span class="w-24 sm:w-32 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"></span>
-        <span class="w-24 sm:w-32 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]" style="transform:scaleX(-1);"></span>
+        <span class="w-14 sm:w-24 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"></span>
+        <span class="w-14 sm:w-24 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]" style="transform:scaleX(-1);"></span>
       </div>
 
-      <div class="site-wrap relative z-10 mx-auto w-full max-w-2xl px-6 sm:px-10 lg:px-12 pb-20 pt-2">
+      <div class="site-wrap relative z-10 mx-auto w-full max-w-2xl px-8 sm:px-10 lg:px-12 pb-20 pt-2">
     <header class="mb-6"></header>
     <main id="main" class="space-y-16">
       <div class="venue is-active space-y-16" id="venue-garre">
         <section id="garre-cover" class="hero relative px-6 sm:px-14 pt-2 pb-0 text-center">
-          <img src="Hero.png" alt="Parniyan and Vincent crest" class="mx-auto mb-4 w-[30rem] sm:w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]" style="filter: saturate(1.09) hue-rotate(2deg) brightness(0.74) contrast(1.99);">
+          <img src="Hero.png" alt="Parniyan and Vincent crest" class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]" style="filter: saturate(0.8) hue-rotate(358deg) brightness(0.737) contrast(2.5);">
           <p class="mt-2 text-base sm:text-lg font-serif uppercase tracking-[0.2em] text-ink/70 leading-relaxed">
             <span class="block">REQUEST THE HONOR</span>
             <span class="block">OF YOUR PRESENCE AT THE</span>
@@ -64,7 +64,7 @@
             <span class="h-6 w-px bg-ink/30"></span>
             <span class="text-xs tracking-[0.35em] font-sans uppercase">June</span>
           </div>
-          <div class="countdown font-sans mt-6 flex items-center justify-center gap-4 text-lg sm:text-2xl uppercase tracking-[0.25em] text-powder" data-countdown="2026-06-17T14:00:00Z">
+          <div class="countdown font-sans mt-6 flex items-center justify-center gap-1 text-lg sm:text-2xl uppercase tracking-[0.25em] text-powder" data-countdown="2026-06-18T14:00:00Z">
             <span class="px-2">00d</span>
             <span class="px-2">00h</span>
             <span class="px-2">00m</span>
@@ -363,7 +363,7 @@
     </div>
   </div>
 
-  <button data-sticky-rsvp class="sticky-rsvp fixed right-6 bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card">RSVP</button>
+  <button data-sticky-rsvp class="sticky-rsvp fixed right-4 bottom-4 sm:right-6 sm:bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card">RSVP</button>
 
   <script src="script.js?v=2" defer></script>
 </body>

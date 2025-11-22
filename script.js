@@ -9,12 +9,20 @@
     if(Number.isNaN(target.getTime())){
       return;
     }
+    const spans = el.querySelectorAll('span');
+    if(!spans.length){
+      return;
+    }
+    let timerId;
+    const zeroValues = ['00d','00h','00m','00s'];
     function tick(){
       const now = new Date();
       const diff = target - now;
-      const spans = el.querySelectorAll('span');
-      if(diff <=0){
-        spans.forEach(s=>s.textContent='00');
+      if(diff <= 0){
+        spans.forEach((s,idx)=>{ s.textContent = zeroValues[idx] || '00'; });
+        if(timerId){
+          clearInterval(timerId);
+        }
         return;
       }
       const days = Math.floor(diff/86400000);
@@ -27,18 +35,21 @@
       spans[3].textContent = String(seconds).padStart(2,'0')+'s';
     }
     tick();
-    setInterval(tick,1000);
+    timerId = setInterval(tick,1000);
   }
   document.querySelectorAll('.countdown').forEach(startCountdown);
 
   // Add to calendar
   function buildICS({title,start,end,description,location}){
+    const uid = (typeof crypto === 'object' && typeof crypto.randomUUID === 'function')
+      ? crypto.randomUUID()
+      : 'pv-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,10);
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
       'PRODID:-//PV Wedding//EN',
       'BEGIN:VEVENT',
-      'UID:'+crypto.randomUUID(),
+      'UID:'+uid,
       'DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z',
       'DTSTART:'+start,
       'DTEND:'+end,
