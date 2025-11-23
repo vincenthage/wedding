@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RSVP — Parniyan & Vincent</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#2b324d',
+          powder: '#6a7fad',
+          cream: '#f6f3ee'
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'serif'],
+          display: ['"Cinzel Decorative"', 'serif']
+        },
+        boxShadow: {
+          card: '0 30px 70px rgba(20, 18, 14, 0.18)'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-cream via-white to-powder/10 font-serif text-ink px-4 py-10">
+  <div class="mx-auto w-full max-w-4xl rounded-[2rem] bg-white/90 p-6 shadow-card">
+    <a class="inline-flex items-center gap-2 text-sm uppercase tracking-[0.3em] text-ink/80" href="index.html">&#8592; Back to invitation</a>
+    <h1 class="mt-6 text-center text-xl font-display tracking-[0.4em] uppercase">RSVP</h1>
+    <div class="mt-6 overflow-hidden rounded-[1.75rem] border border-ink/10">
+      <iframe id="tallyFrame" title="RSVP form" loading="lazy" class="h-[1200px] w-full border-0 bg-transparent"></iframe>
+    </div>
+  </div>
+
+<script>
+  (function(){
+    var TALLY_BASE = "https://tally.so/r/me4zkO";
+    var DISPLAY_PARAMS = "transparentBackground=1&hideTitle=1";
+    var qs = window.location.search.replace(/^\?/,'');
+    var glue = (qs && DISPLAY_PARAMS) ? '&' : '';
+    var url = TALLY_BASE + (qs ? ('?' + qs) : '') + (DISPLAY_PARAMS ? ((qs ? glue : '?') + DISPLAY_PARAMS) : '');
+    document.getElementById('tallyFrame').src = url;
+  })();
+</script>
+</body>
+</html>
