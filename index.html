@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Parniyan & Vincent — Celebration Wedding</title>
+<title>Parniyan & Vincent · Celebration Wedding</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Parisienne:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="tailwind.js"></script>
@@ -12,8 +12,8 @@
     theme: {
       extend: {
         colors: {
-          ink: '#2b324d',
-          powder: '#6a7fad',
+          ink: 'rgb(77, 43, 43)',
+          powder: '#ad6a6a',
           periwinkle: '#bfc6df',
           lavender: '#e6e3f3',
           cream: '#f6f3ee',
@@ -35,8 +35,8 @@
 <style>
   :root {
     --envelope-cream: #f7f4ee;
-    --envelope-ink: #2b324d;
-    --envelope-powder: #7b8eb8;
+    --envelope-ink: rgb(77, 43, 45);
+    --envelope-powder: #ad6a6a;
     --envelope-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
   }
   .tally-powered {
@@ -162,7 +162,7 @@
   }
 </style>
 </head>
-<body class="min-h-screen font-serif text-ink bg-white bg-[url('grainy.png')] bg-repeat relative">
+<body class="min-h-screen font-serif text-[rgb(77,43,43)] bg-white bg-[url('grainy.png')] bg-repeat relative">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-white px-4 py-2 rounded-md z-50">Skip to content</a>
   <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
     <div class="absolute inset-0 opacity-70" style="background:radial-gradient(circle at 12% 20%, rgba(191,199,178,.35), transparent 55%), radial-gradient(circle at 85% 25%, rgba(206,181,160,.25), transparent 60%), radial-gradient(circle at 25% 80%, rgba(153,178,153,.2), transparent 55%);"></div>
@@ -170,8 +170,8 @@
   <div class="page-frame min-h-screen flex justify-center px-4 sm:px-5 pt-6 pb-6">
     <div class="frame-shell relative w-full max-w-[1000px] rounded-[2.5rem] bg-[url('grainy.png')] px-4 sm:px-5 lg:px-6 py-8 shadow-[0_25px_75px_rgba(43,50,77,0.18)]">
       <div class="edge-flowers pointer-events-none absolute top-3 bottom-6 left-0 right-0 flex justify-between" aria-hidden="true">
-        <span class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"></span>
-        <span class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]" style="transform:scaleX(-1);"></span>
+        <span class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]" style="filter: saturate(0.689) hue-rotate(161deg) brightness(0.8) contrast(2.9);"></span>
+        <span class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]" style="transform:scaleX(-1);filter: saturate(0.689) hue-rotate(161deg) brightness(0.8) contrast(2.9);"></span>
       </div>
 
       <div class="site-wrap relative z-10 mx-auto w-full max-w-2xl px-10 sm:px-12 lg:px-14 pb-20 pt-2">
@@ -179,19 +179,17 @@
     <main id="main" class="space-y-16">
       <div class="venue is-active space-y-16" id="venue-garre">
         <section id="garre-cover" class="hero relative px-6 sm:px-14 pt-2 pb-0 text-center">
-          <img src="Hero.png" alt="Parniyan and Vincent crest" class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]" style="filter: saturate(0.8) hue-rotate(0deg) brightness(0.737) contrast(2.2);">
+          <img src="Hero.png" alt="Parniyan and Vincent crest" class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]" style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.6695) contrast(3.3);">
           <p class="mt-2 text-base sm:text-lg font-serif uppercase tracking-[0.2em] text-ink/70 leading-relaxed">
             <span class="block">REQUEST THE HONOR</span>
             <span class="block">OF YOUR PRESENCE AT THE</span>
             <span class="block">CELEBRATION OF THEIR BEAUTIFUL WEDDING</span>
           </p>
           <h1 class="sr-only">Parniyan &amp; Vincent</h1>
-          <div class="hero-date mt-5 flex items-center justify-center gap-4 text-ink/80">
-            <span class="text-xs tracking-[0.35em] font-sans uppercase">Thursday</span>
-            <span class="h-6 w-px bg-ink/30"></span>
-            <span class="text-3xl sm:text-4xl font-serif tracking-[0.25em] text-powder">18</span>
-            <span class="h-6 w-px bg-ink/30"></span>
-            <span class="text-xs tracking-[0.35em] font-sans uppercase">June</span>
+          <div class="hero-date mt-5 flex flex-col items-center justify-center gap-1 text-ink/80">
+            <span class="text-sm sm:text-base tracking-[0.45em] font-sans uppercase">06</span>
+            <span class="text-4xl sm:text-5xl font-serif tracking-[0.35em] text-powder font-semibold">16 · 17 · 18</span>
+            <span class="text-sm sm:text-base tracking-[0.4em] font-sans uppercase text-ink/70 font-semibold">2026</span>
           </div>
           <div class="countdown font-sans mt-6 flex items-center justify-center gap-1 text-lg sm:text-2xl uppercase tracking-[0.25em] text-powder" data-countdown="2026-06-18T14:00:00Z">
             <span class="px-2">00d</span>
@@ -201,38 +199,25 @@
           </div>
           <p class="mt-6 text-sm uppercase tracking-[0.25em] text-ink/80">Château de Garrevaques</p>
         </section>
-        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto my-0 mb-16 mt-16 w-96 opacity-80" style="filter: saturate(0.8) hue-rotate(0deg) brightness(0.737) contrast(2.2);">
+        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto my-0 mb-16 mt-16 w-96 opacity-80" style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.655) contrast(3.3);">
 
         <section id="garre-hello" class="space-y-4">
-          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Hello</h3>
-          <p class="text-lg leading-relaxed">We cannot wait to gather our favorite people for a long watercolor wedding in the French countryside. Expect sun-drenched gardens, candlelit dinners, and plenty of time to reconnect. Below you’ll find the wedding plan, where to stay, and travel notes to make everything easy.</p>
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">A Gentle Invitation</h3>
+          <p class="text-lg leading-relaxed">With great happiness we look forward to gathering our dearest family and friends for a joyous celebration in the French countryside—afternoons in the gardens, candlelit suppers, and unhurried conversations beneath the trees. Below you will find a first glimpse of the festivities, how to reach us, and where we hope you will rest your head.</p>
         </section>
 
         <section id="garre-events" class="space-y-10">
           <div class="space-y-1 text-left">
-            <p class="text-xl font-script text-powder">Events</p>
-            <h3 class="text-3xl font-display tracking-[0.2em] text-left">Itinerary</h3>
+            <h3 class="text-3xl font-display tracking-[0.2em] text-left">Events</h3>
           </div>
           <div class="grid gap-8 sm:grid-cols-3">
             <article class="relative space-y-4 pl-6">
               <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
               <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Wednesday • June 17</div>
               <div class="space-y-6">
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-                  <div class="space-y-1">
-                    <p class="font-serif text-lg tracking-[0.05em]">5:00 PM</p>
-                    <p>Arrivals &amp; Check‑in</p>
-                    <p class="text-sm text-ink/70">Resort casual</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-                  <div class="space-y-1">
-                    <p class="font-serif text-lg tracking-[0.05em]">6:00 PM</p>
-                    <p>Welcome Drinks &amp; Pub Trivia</p>
-                    <p class="text-sm text-ink/70">Casual</p>
-                  </div>
+                <div class="space-y-1">
+                  <p class="font-serif text-lg tracking-[0.05em]">Evening gathering</p>
+                  <p>Guests arrive, settle in, and join us in the gardens for a gentle evening together.</p>
                 </div>
               </div>
             </article>
@@ -240,29 +225,9 @@
               <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
               <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Thursday • June 18</div>
               <div class="space-y-6">
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-                  <div class="space-y-1">
-                    <p class="font-serif text-lg tracking-[0.05em]">4:00 PM</p>
-                    <p>Wedding Ceremony &amp; Reception</p>
-                    <p class="text-sm text-ink/70">Garden formal • Black tie optional</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-                  <div class="space-y-1">
-                    <p class="font-serif text-lg tracking-[0.05em]">8:00 PM</p>
-                    <p>Candlelit Dinner</p>
-                    <p class="text-sm text-ink/70">Dressy casual</p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-                  <div class="space-y-1">
-                    <p class="font-serif text-lg tracking-[0.05em]">10:30 PM</p>
-                    <p>Dancing in the Orangery</p>
-                    <p class="text-sm text-ink/70">Comfortable shoes welcome</p>
-                  </div>
+                <div class="space-y-1">
+                  <p class="font-serif text-lg tracking-[0.05em]">Wedding celebration</p>
+                  <p>Ceremony at the château, followed by a reception, supper, and dancing late into the night.</p>
                 </div>
               </div>
             </article>
@@ -270,77 +235,67 @@
               <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
               <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Friday • June 19</div>
               <div class="space-y-6">
-                <div class="flex items-start gap-3">
-                  <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-                  <div class="space-y-1">
-                    <p class="font-serif text-lg tracking-[0.05em]">12:00 PM</p>
-                    <p>Poolside Brunch Farewell</p>
-                    <p class="text-sm text-ink/70">Light summer attire</p>
-                  </div>
+                <div class="space-y-1">
+                  <p class="font-serif text-lg tracking-[0.05em]">Farewell brunch</p>
+                  <p>A leisurely brunch by the pool, with time to swim, linger, and regather until the late afternoon.</p>
                 </div>
               </div>
             </article>
           </div>
         </section>
 
+        <section id="garre-location" class="space-y-4">
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Location</h3>
+          <p class="text-lg">Château de Garrevaques sits just beyond Toulouse, about an hour’s drive into the countryside. Once you leave the city, the road winds through fields and trees until it arrives at the château’s quiet outskirts.</p>
+        </section>
+
         <section id="garre-travel" class="space-y-6">
-          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Location &amp; Travel</h3>
-          <p class="text-lg">Château de Garrevaques, near Revel in the French countryside.</p>
-          <div class="relative space-y-6 pl-6">
-            <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-            <div class="flex items-start gap-3">
-              <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-              <div class="space-y-1">
-                <p class="font-sans uppercase tracking-[0.25em] text-sm text-powder">Air &amp; Train</p>
-                <p>Toulouse (TLS) is the main hub; Carcassonne (CCF) often has budget flights; Castres–Mazamet (DCM) is the closest regional airport. SNCF/TGV to Toulouse, then car hire or a pre-booked transfer to the château.</p>
-              </div>
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Travel</h3>
+          <div class="space-y-5">
+            <div class="space-y-1">
+              <p class="font-serif text-lg tracking-[0.05em]">Air &amp; train</p>
+              <p class="text-lg leading-relaxed">Most guests will travel via Toulouse (TLS), with Carcassonne (CCF) and Castres–Mazamet (DCM) as charming alternatives. High-speed SNCF/TGV trains serve Toulouse; from there a hired car or arranged transfer will bring you to the château.</p>
             </div>
+            <div class="space-y-1">
+              <p class="font-serif text-lg tracking-[0.05em]">Local transfers</p>
+              <p class="text-lg leading-relaxed">We will arrange a shared shuttle between town and château; fuller details will arrive with a later RSVP.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="garre-attire" class="space-y-4">
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Dress Code</h3>
+          <p class="text-lg leading-relaxed">We kindly request cocktail attire in our suggested palette. Please refrain from wearing full black, white, or cream, as those hues are reserved for the wedding party. A colour inspiration and further recommendations will be shared in our FAQs.</p>
+          <h4 class="text-2xl font-display tracking-[0.15em] text-left mt-4">Children &amp; Plus Ones</h4>
+          <p class="text-lg leading-relaxed">With heartfelt thanks for your understanding, we can only host the guests named on this invitation. If you have any questions, please reach out to us directly.</p>
+        </section>
+
+        <section id="garre-accommodation" class="space-y-4">
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Accommodation</h3>
+          <div class="space-y-5">
             <div class="flex items-start gap-3">
-              <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
+              <div class="mt-2 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
               <div class="space-y-1">
-                <p class="font-sans uppercase tracking-[0.25em] text-sm text-powder">Local Transfers</p>
-                <p>We can help coordinate shuttles or taxis from Toulouse or Castres. Please include your arrival details in the RSVP.</p>
+                <p class="font-serif text-lg tracking-[0.05em]">Hôtellerie du Lac</p>
+                <p class="text-lg leading-relaxed">We have set aside 24 rooms at Hôtellerie du Lac, a small lakeside inn around fifteen minutes from the château, including an accessible room and several family suites. The hotel has created a wedding package for us, which is expected to come to roughly €40–45 per guest, per night, breakfast included, depending on how rooms are shared.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="garre-accommodation" class="space-y-4">
-          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">Accommodation</h3>
-          <div class="relative space-y-5 pl-6">
-            <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-            <div class="flex items-start gap-3">
-              <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-              <div class="space-y-1">
-                <p class="font-serif text-lg tracking-[0.05em]">On-site rooms</p>
-                <p>We have 24 rooms reserved at the château for our guests. We’ll share booking details privately after you RSVP.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-              <div class="space-y-1">
-                <p class="font-serif text-lg tracking-[0.05em]">Nearby stays</p>
-                <p>Revel and the surrounding villages have charming hotels and gîtes—happy to recommend our favorites.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="mt-1 h-2 w-2 rounded-full bg-powder" aria-hidden="true"></div>
-              <div class="space-y-1">
-                <p class="font-serif text-lg tracking-[0.05em]">Comfort notes</p>
-                <p class="text-sm text-ink/70">Note dietary or accessibility needs in your RSVP so we can place you comfortably.</p>
-              </div>
-            </div>
-          </div>
+        <section id="garre-rsvp" class="space-y-4">
+          <h3 class="mt-6 text-3xl font-display tracking-[0.2em] text-left">RSVP</h3>
+          <p class="text-lg">This pre‑RSVP is simply to help us plan rooms, shuttles, and tables with care. A second, more detailed RSVP will follow closer to the wedding with menu choices and other little delights.</p>
         </section>
 
       </div>
 
     </main>
 
-        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto mt-6 w-96 opacity-70" style="filter: saturate(0.8) hue-rotate(0deg) brightness(0.737) contrast(2.2);">
+        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto mt-6 w-96 opacity-70" style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.655) contrast(3.3);">
 
         <footer class="mt-6 text-center text-xs uppercase tracking-[0.35em] text-ink/70 space-y-2 font-sans">
-          <p><a href="mailto:wedding@pv.love" class="underline">wedding@pv.love</a> • Map &amp; details forthcoming</p>
+          <p><a href="mailto:wedding@pv.love" class="underline">wedding@pv.love</a> • Further maps &amp; particulars to follow</p>
           <p>&copy; 06.26 Parniyan &amp; Vincent</p>
         </footer>
       </div>
@@ -373,7 +328,7 @@
     </div>
   </div>
 
-  <button data-open-rsvp data-sticky-rsvp class="sticky-rsvp fixed right-4 bottom-4 sm:right-6 sm:bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card hover:bg-ink">RSVP</button>
+  <button data-open-rsvp data-sticky-rsvp class="sticky-rsvp fixed right-4 bottom-4 sm:right-6 sm:bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card hover:bg-ink">Pre RSVP</button>
 
   <script src="script.js?v=2" defer></script>
 </body>
