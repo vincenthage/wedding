@@ -122,6 +122,10 @@
       transform: scaleX(1);
     }
 
+    .hero-date span:nth-child(2) {
+      letter-spacing: 0.2em !important;
+    }
+
     .envelope-flap {
       position: absolute;
       inset: 0;
@@ -155,7 +159,7 @@
       bottom: 34%;
       background: url(Hero.png) center/contain no-repeat;
       opacity: 1;
-      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18)) saturate(0.7) hue-rotate(161deg) brightness(0.75) contrast(1.9);
+      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18)) saturate(0.7) hue-rotate(160deg) brightness(0.599) contrast(5.9);
       pointer-events: none;
       z-index: 3;
     }
@@ -240,6 +244,36 @@
         --flap-delay: 0s;
       }
     }
+
+    @media (max-width: 640px) {
+      .envelope-card {
+        width: 88%;
+        margin: 18% auto 8%;
+        aspect-ratio: 3 / 4;
+        min-height: 480px;
+      }
+
+      .envelope-card-inner {
+        padding: 12px 14px;
+      }
+
+      .hero-date {
+        gap: 0.15rem;
+        margin-top: 1rem;
+      }
+
+      .hero-date span:first-child,
+      .hero-date span:last-child {
+        font-size: 1.1rem;
+        letter-spacing: 0.28em;
+      }
+
+      .hero-date span:nth-child(2) {
+        font-size: 2.35rem;
+        letter-spacing: 0.14em !important;
+        line-height: 1.1;
+      }
+    }
   </style>
 </head>
 
@@ -272,7 +306,7 @@
             <section id="garre-cover" class="hero relative px-6 sm:px-14 pt-2 pb-0 text-center">
               <img src="Hero.png" alt="Parniyan and Vincent crest"
                 class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]"
-                style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.6695) contrast(3.3);">
+                style="filter: saturate(0.7) hue-rotate(160deg) brightness(0.599) contrast(5.9);">
               <p class="mt-2 text-base sm:text-lg font-serif uppercase tracking-[0.2em] text-ink/70 leading-relaxed">
                 <span class="block">REQUEST THE HONOR</span>
                 <span class="block">OF YOUR PRESENCE AT THE</span>
@@ -375,7 +409,7 @@
               <p class="text-lg leading-relaxed">We kindly request cocktail attire in our suggested palette. Please
                 refrain from wearing full black, white, red, or cream, as those hues are reserved for the wedding party.
                 A colour inspiration and further recommendations will be shared in our FAQs.</p>
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Children &amp; Plus Ones</h3>
+              <h3 class="text-3xl font-display tracking-[0.2em] text-left mt-6">Children &amp; Plus Ones</h3>
               <p class="text-lg leading-relaxed">With heartfelt thanks for your understanding, we can only host the
                 guests named on this invitation. If you have any questions, please reach out to us directly.</p>
             </section>
