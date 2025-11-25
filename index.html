@@ -41,10 +41,16 @@
       --envelope-ink: rgb(77, 43, 45);
       --envelope-powder: #ad6a6a;
       --envelope-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
+      --envelope-cranberry: rgba(125, 43, 43, 0.1);
     }
 
     .tally-powered {
       display: none !important;
+    }
+
+    .sticky-rsvp {
+      z-index: 60;
+      touch-action: manipulation;
     }
 
     .envelope-scene {
@@ -53,15 +59,18 @@
 
     .envelope-shell {
       position: relative;
+      --card-delay: 0s;
+      --flap-duration: 3s;
+      --flap-delay: 1s;
       background: linear-gradient(145deg, #fcfaf6, #f0ebe2), url('grainy.png');
       background-blend-mode: multiply;
-      border: 1px solid rgba(43, 50, 77, 0.08);
+      border: solid 6px var(--envelope-cranberry);
       box-shadow: var(--envelope-shadow);
       overflow: visible;
       max-width: 620px;
       margin-left: auto;
       margin-right: auto;
-      border-radius: 6px;
+      border-radius: 0 0 14px 14px;
       overflow: visible;
     }
 
@@ -71,9 +80,9 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 42%;
-      background: linear-gradient(160deg, #f8f6f2, #e8e2d8);
-      clip-path: polygon(0 0, 50% 36%, 100% 0, 100% 18%, 0 18%);
+      height: 24%;
+      background: linear-gradient(180deg, #f8f6f2, #e8e2d8);
+      clip-path: polygon(2% 0, 98% 0, 94% 100%, 6% 100%);
       z-index: 1;
     }
 
@@ -84,6 +93,7 @@
       background: linear-gradient(145deg, rgba(252, 250, 246, 0.95), rgba(237, 232, 221, 0.9));
       clip-path: polygon(0 0, 50% 30%, 100% 0, 100% 100%, 0 100%);
       border: 1px solid rgba(43, 50, 77, 0.08);
+      border-radius: 0 0 12px 12px;
       pointer-events: none;
       z-index: 1;
     }
@@ -100,15 +110,16 @@
       width: 26%;
       background-image: url('invitation borders.png');
       background-repeat: no-repeat;
-      background-position: right center;
+      background-position: center center;
       background-size: cover;
       opacity: 0.8;
-      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18));
+      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18)) saturate(1.4) hue-rotate(161deg) brightness(0.72) contrast(2.1);
+      transform: scaleX(-1);
     }
 
     .envelope-flowers span:last-child {
-      transform: scaleX(-1);
-      background-position: right center;
+      background-position: center center;
+      transform: scaleX(1);
     }
 
     .envelope-flap {
@@ -119,10 +130,20 @@
       clip-path: polygon(0 0, 50% 86%, 100% 0);
       transform-origin: top center;
       transform: rotateX(0deg);
-      transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform var(--flap-duration) cubic-bezier(0.23, 1, 0.32, 1) var(--flap-delay);
       box-shadow: inset 0 -18px 28px rgba(43, 50, 77, 0.08);
       overflow: hidden;
       z-index: 3;
+    }
+
+    .envelope-flap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(0 0, 50% 86%, 100% 0);
+      border: solid 6px var(--envelope-cranberry);
+      pointer-events: none;
+      z-index: 2;
     }
 
     .envelope-flap::after {
@@ -132,10 +153,11 @@
       right: 22%;
       top: 8%;
       bottom: 34%;
-      background: url('Hero.png') center/contain no-repeat;
-      opacity: 0.35;
-      filter: saturate(0.6) brightness(0.9);
+      background: url(Hero.png) center/contain no-repeat;
+      opacity: 1;
+      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18)) saturate(0.7) hue-rotate(161deg) brightness(0.75) contrast(1.9);
       pointer-events: none;
+      z-index: 3;
     }
 
     .envelope-card {
@@ -148,7 +170,12 @@
       border-radius: 8px;
       box-shadow: 0 0 3px 0 rgba(43, 50, 77, 0.22);
       transform: translateY(32px);
-      transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 3s cubic-bezier(0.23, 1, 0.32, 1);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform 1.6s cubic-bezier(0.23, 1, 0.32, 1) var(--card-delay),
+        box-shadow 1.6s cubic-bezier(0.23, 1, 0.32, 1) var(--card-delay),
+        opacity 0.4s ease var(--card-delay);
       border: 1px solid rgba(43, 50, 77, 0.08);
       z-index: 2;
     }
@@ -184,7 +211,13 @@
       transform: rotateX(-136deg) translateY(-1%);
     }
 
+    .envelope-shell.envelope-open {
+      --card-delay: calc(var(--flap-duration) + var(--flap-delay) + 0.1s);
+    }
+
     .envelope-open .envelope-card {
+      opacity: 1;
+      pointer-events: auto;
       transform: translateY(-22px);
       box-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
     }
@@ -199,6 +232,12 @@
       .envelope-flap,
       .envelope-card {
         transition-duration: 160ms;
+      }
+
+      .envelope-shell.envelope-open {
+        --card-delay: 0s;
+        --flap-duration: 160ms;
+        --flap-delay: 0s;
       }
     }
   </style>
@@ -386,7 +425,7 @@
       aria-label="RSVP envelope">
       <div class="relative w-full max-w-4xl" tabindex="-1">
         <div class="envelope-scene">
-          <div class="envelope-shell aspect-[3/2] w-full rounded-[26px]">
+          <div class="envelope-shell aspect-[3/2] w-full">
             <div class="envelope-flap"></div>
             <div class="envelope-flowers" aria-hidden="true">
               <span></span>
@@ -411,7 +450,7 @@
   <button data-open-rsvp data-sticky-rsvp
     class="sticky-rsvp fixed right-4 bottom-4 sm:right-6 sm:bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card hover:bg-ink">RSVP</button>
 
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js?v=3" defer></script>
 </body>
 
 </html>
