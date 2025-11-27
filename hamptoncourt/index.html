@@ -4,23 +4,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parniyan & Vincent · Celebration Wedding</title>
+  <title>Parniyan & Vincent · Hampton Court Palace</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Parisienne:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <script src="tailwind.js"></script>
+  <script src="../tailwind.js"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            ink: 'rgb(77, 43, 43)',
-            powder: '#ad6a6a',
-            periwinkle: '#bfc6df',
-            lavender: '#e6e3f3',
-            cream: '#f6f3ee',
-            gold: '#b7a78f'
+            ink: 'rgb(34, 54, 94)',
+            powder: '#7aa2d6',
+            periwinkle: '#c8d6f4',
+            lavender: '#e6eefb',
+            cream: '#f5f8fc',
+            gold: '#8aa6d1'
           },
           fontFamily: {
             serif: ['"Cormorant Garamond"', 'serif'],
@@ -29,7 +29,7 @@
             sans: ['Raleway', 'sans-serif']
           },
           boxShadow: {
-            card: '0 25px 55px rgba(43, 50, 77, 0.08)'
+            card: '0 25px 55px rgba(34, 54, 94, 0.12)'
           }
         }
       }
@@ -37,11 +37,11 @@
   </script>
   <style>
     :root {
-      --envelope-cream: #f7f4ee;
-      --envelope-ink: rgb(77, 43, 45);
-      --envelope-powder: #ad6a6a;
-      --envelope-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
-      --envelope-cranberry: rgba(125, 43, 43, 0.1);
+      --envelope-cream: #f7f9fd;
+      --envelope-ink: rgb(34, 54, 94);
+      --envelope-powder: #7aa2d6;
+      --envelope-shadow: 0 30px 70px rgba(34, 54, 94, 0.22);
+      --envelope-cranberry: rgba(98, 141, 201, 0.18);
     }
 
     .tally-powered {
@@ -70,7 +70,7 @@
       --card-delay: 0s;
       --flap-duration: 3s;
       --flap-delay: 1s;
-      background: linear-gradient(145deg, #fcfaf6, #f0ebe2), url('grainy.png');
+      background: linear-gradient(145deg, #f7f9fd, #e8eef7), url('../grainy.png');
       background-blend-mode: multiply;
       border: solid 6px var(--envelope-cranberry);
       box-shadow: var(--envelope-shadow);
@@ -89,7 +89,7 @@
       left: 0;
       right: 0;
       height: 24%;
-      background: linear-gradient(180deg, #f8f6f2, #e8e2d8);
+      background: linear-gradient(180deg, #f1f6ff, #e0e8f5);
       clip-path: polygon(2% 0, 98% 0, 94% 100%, 6% 100%);
       z-index: 1;
     }
@@ -98,9 +98,9 @@
       position: absolute;
       inset: 0 0 auto;
       height: 80%;
-      background: linear-gradient(145deg, rgba(252, 250, 246, 0.95), rgba(237, 232, 221, 0.9));
+      background: linear-gradient(145deg, rgba(247, 249, 253, 0.95), rgba(226, 234, 246, 0.92));
       clip-path: polygon(0 0, 50% 30%, 100% 0, 100% 100%, 0 100%);
-      border: 1px solid rgba(43, 50, 77, 0.08);
+      border: 1px solid rgba(34, 54, 94, 0.08);
       border-radius: 0 0 12px 12px;
       pointer-events: none;
       z-index: 1;
@@ -114,12 +114,12 @@
       position: absolute;
       inset: 0;
       height: 62%;
-      background: linear-gradient(160deg, #f8f6f2, #e8e2d8);
+      background: linear-gradient(160deg, #f1f6ff, #e0e8f5);
       clip-path: polygon(0 0, 50% 86%, 100% 0);
       transform-origin: top center;
       transform: rotateX(0deg);
       transition: transform var(--flap-duration) cubic-bezier(0.23, 1, 0.32, 1) var(--flap-delay);
-      box-shadow: inset 0 -18px 28px rgba(43, 50, 77, 0.08);
+      box-shadow: inset 0 -18px 28px rgba(34, 54, 94, 0.12);
       overflow: visible;
       z-index: 3;
     }
@@ -146,8 +146,8 @@
       transform: translate(-50%, -50%);
       width: 140px;
       height: 140px;
-      background: url('pv wax seal.png') center/contain no-repeat;
-      filter: drop-shadow(0 12px 18px rgba(43, 50, 77, 0.25));
+      background: url('../pv wax seal.png') center/contain no-repeat;
+      filter: saturate(0.85) drop-shadow(0 12px 18px rgba(34, 54, 94, 0.25));
       z-index: 5;
       transition:
         opacity calc(var(--flap-duration) / 2) ease var(--flap-delay),
@@ -167,9 +167,9 @@
       width: 86%;
       max-width: 960px;
       aspect-ratio: 1 / 1;
-      background: #fefbf6 url('grainy.png') repeat;
+      background: #f7faff url('../grainy.png') repeat;
       border-radius: 8px;
-      box-shadow: 0 0 3px 0 rgba(43, 50, 77, 0.22);
+      box-shadow: 0 0 3px 0 rgba(34, 54, 94, 0.22);
       transform: translateY(32px);
       opacity: 0;
       pointer-events: none;
@@ -177,7 +177,7 @@
         transform 1.6s cubic-bezier(0.23, 1, 0.32, 1) var(--card-delay),
         box-shadow 1.6s cubic-bezier(0.23, 1, 0.32, 1) var(--card-delay),
         opacity 0.4s ease var(--card-delay);
-      border: 1px solid rgba(43, 50, 77, 0.08);
+      border: 1px solid rgba(34, 54, 94, 0.12);
       z-index: 2;
     }
 
@@ -203,7 +203,7 @@
       right: 0;
       bottom: 0;
       height: 140px;
-      background: #fefbf6 url('grainy.png') repeat;
+      background: #f7faff url('../grainy.png') repeat;
       pointer-events: none;
       z-index: 3;
     }
@@ -214,9 +214,9 @@
       right: 10px;
       bottom: 10px;
       height: 48px;
-      background: #fefbf6 url('grainy.png') repeat;
+      background: #f7faff url('../grainy.png') repeat;
       border-radius: 8px;
-      box-shadow: 0 -8px 14px rgba(43, 50, 77, 0.08);
+      box-shadow: 0 -8px 14px rgba(34, 54, 94, 0.08);
       pointer-events: all;
       user-select: none;
       cursor: default;
@@ -235,7 +235,7 @@
       opacity: 1;
       pointer-events: auto;
       transform: translateY(-22px);
-      box-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
+      box-shadow: 0 30px 70px rgba(34, 54, 94, 0.22);
     }
 
     .rsvp-modal.is-visible {
@@ -281,151 +281,133 @@
   </style>
 </head>
 
-<body class="min-h-screen font-serif text-[rgb(77,43,43)] bg-white bg-[url('grainy.png')] bg-repeat relative">
+<body data-tally-base="https://tally.so/r/Zj9d0B"
+  class="min-h-screen font-serif text-[rgb(34,54,94)] bg-white bg-[url('../grainy.png')] bg-repeat relative">
   <a href="#main"
     class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-white px-4 py-2 rounded-md z-50">Skip
     to content</a>
   <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
     <div class="absolute inset-0 opacity-70"
-      style="background:radial-gradient(circle at 12% 20%, rgba(191,199,178,.35), transparent 55%), radial-gradient(circle at 85% 25%, rgba(206,181,160,.25), transparent 60%), radial-gradient(circle at 25% 80%, rgba(153,178,153,.2), transparent 55%);">
+      style="background:radial-gradient(circle at 12% 20%, rgba(170,196,230,.35), transparent 55%), radial-gradient(circle at 85% 25%, rgba(150,176,220,.25), transparent 60%), radial-gradient(circle at 25% 80%, rgba(120,170,210,.2), transparent 55%);">
     </div>
   </div>
   <div class="page-frame min-h-screen flex justify-center px-4 sm:px-5 pt-6 pb-6">
     <div
-      class="frame-shell relative w-full max-w-[1000px] rounded-[2.5rem] bg-[url('grainy.png')] px-4 sm:px-5 lg:px-6 py-8 shadow-[0_25px_75px_rgba(43,50,77,0.18)]">
+      class="frame-shell relative w-full max-w-[1000px] rounded-[2.5rem] bg-[url('../grainy.png')] px-4 sm:px-5 lg:px-6 py-8 shadow-[0_25px_75px_rgba(34,54,94,0.18)]">
       <div class="edge-flowers pointer-events-none absolute top-3 bottom-6 left-0 right-0 flex justify-between"
         aria-hidden="true">
         <span
-          class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"
-          style="filter: saturate(0.789) hue-rotate(161deg) brightness(0.9) contrast(1.7);"></span>
+          class="w-10 sm:w-20 lg:w-44 bg-[url('../flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(34,54,94,0.28)]"
+          style="filter: saturate(0.85) hue-rotate(358deg) brightness(0.96) contrast(1.65);"></span>
         <span
-          class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"
-          style="transform:scaleX(-1);filter: saturate(0.789) hue-rotate(161deg) brightness(0.9) contrast(1.7);"></span>
+          class="w-10 sm:w-20 lg:w-44 bg-[url('../flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(34,54,94,0.28)]"
+          style="transform:scaleX(-1);filter: saturate(0.85) hue-rotate(358deg) brightness(0.96) contrast(1.65);"></span>
       </div>
 
       <div class="site-wrap relative z-10 mx-auto w-full max-w-2xl px-10 sm:px-12 lg:px-14 pb-20 pt-2">
         <header class="mb-6"></header>
         <main id="main" class="space-y-16">
-          <div class="venue is-active space-y-16" id="venue-garre">
-            <section id="garre-cover" class="hero relative px-6 sm:px-14 pt-2 pb-0 text-center">
-              <img src="Hero.png" alt="Parniyan and Vincent crest"
-                class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]"
-                style="filter: saturate(0.657) hue-rotate(160deg) brightness(0.64) contrast(4.2);">
+          <div class="venue is-active space-y-16" id="venue-hampton">
+            <section id="hampton-cover" class="hero relative px-6 sm:px-14 pt-2 pb-0 text-center">
+              <img src="../Hero.png" alt="Parniyan and Vincent crest"
+                class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(34,54,94,0.28)]"
+                style="filter: saturate(0.82) hue-rotate(359deg) brightness(0.692) contrast(3.2);">
               <p class="mt-2 text-base sm:text-lg font-serif uppercase tracking-[0.2em] text-ink leading-relaxed">
                 <span class="block">REQUEST THE HONOR</span>
                 <span class="block">OF YOUR PRESENCE AT THE</span>
-                <span class="block">CELEBRATION OF OUR EXQUISITE WEDDING AT</span>
-                <span class="block">CHÂTEAU DE GARREVAQUES</span>
+                <span class="block">CIVIL WEDDING OF</span>
+                <span class="block">PARNIYAN &amp; VINCENT</span>
+                <span class="block">AT HAMPTON COURT PALACE</span>
               </p>
               <h1 class="sr-only">Parniyan &amp; Vincent</h1>
               <div
                 class="hero-date mt-14 flex flex-col items-center justify-center gap-1 text-ink/80 text-2xl sm:text-3xl tracking-[0.45em] font-serif font-semibold">
                 <span class="font-display font-normal tracking-[0.2em] text-3xl sm:text-4xl">June</span>
-                <span class="text-powder">17·18·19</span>
+                <span class="text-powder">02</span>
                 <span class="text-ink/70">2026</span>
               </div>
               <div
-                class="countdown mt-6 flex items-center justify-center gap-1 text-1xl sm:text-3xl uppercase tracking-[0.45em] font-serif font-semibold text-powder"
-                data-countdown="2026-06-17T16:00:00+02:00">
+                class="countdown mt-6 flex items-center justify-center gap-1 text-1xl sm:text-2xl uppercase tracking-[0.45em] font-serif font-semibold text-powder"
+                data-countdown="2026-06-02T13:00:00+01:00">
                 <span class="px-1">00d</span>
                 <span class="px-1">00h</span>
                 <span class="px-1">00m</span>
               </div>
             </section>
-            <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto my-0 mb-16 mt-16 w-96 opacity-80"
-              style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.655) contrast(3.3);">
+            <img src="../pv_separator.png" alt="" aria-hidden="true" class="mx-auto my-0 mb-16 mt-16 w-96 opacity-80"
+              style="filter: saturate(0.78) hue-rotate(7deg) brightness(0.7) contrast(3.2);">
 
-            <section id="garre-hello" class="space-y-4">
+            <section id="hampton-hello" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">A Gentle Invitation</h3>
-              <p class="text-lg leading-relaxed">With the greatest pleasure, we look forward to welcoming our dearest family and friends to the countryside of the South of France for a celebration of our marriage. Expect days and nights brimming with joy, live music and laughter, followed by the finest cocktails, candlelit dining, and dancing long into the night. We kindly ask you to bring your brightest spirits and warmest energy, to accompany us in our festivities.</p>
+              <p class="text-lg leading-relaxed">With the greatest pleasure, we look forward to welcoming our dearest
+                family and friends to historic Hampton Court Palace. Expect a ceremony within its storied walls and a
+                riverside celebration just across the road at The Mitre Restaurant. We kindly ask you to bring your
+                brightest spirits to share in this London summer day with us.</p>
             </section>
 
-            <section id="garre-events" class="space-y-3">
+            <section id="hampton-events" class="space-y-3">
               <div class="space-y-1 text-left">
                 <h3 class="text-3xl font-display tracking-[0.2em] text-left">Events</h3>
               </div>
               <div class="grid gap-6">
                 <article class="relative space-y-4 pl-6">
                   <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Wednesday • June 17</div>
+                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Tuesday • June 2</div>
                   <div class="space-y-6">
                     <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Welcoming</p>
-                      <p class="text-lg leading-relaxed">In the late afternoon, we shall be pleased to host a welcoming gathering in the beautiful gardens of the château, to mark the beginning of our celebrations and kindle the spirits for the days to follow.</p>
-                    </div>
-                  </div>
-                </article>
-                <article class="relative space-y-4 pl-6">
-                  <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Thursday • June 18</div>
-                  <div class="space-y-6">
-                    <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Wedding</p>
-                      <p class="text-lg leading-relaxed">At the château, on this most special of days, we will exchange our vows and be proclaimed husband and wife. We eagerly await your cheers and champagne toasts to our new title, before we dance and make merry long into the night.</p>
-                    </div>
-                  </div>
-                </article>
-                <article class="relative space-y-4 pl-6">
-                  <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Friday • June 19</div>
-                  <div class="space-y-6">
-                    <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Post-wedding</p>
-                      <p class="text-lg leading-relaxed">On the following morning, we will rejoice in celebrating the first day of our marriage with you once more in the château’s grounds, lingering beneath the shade of the trees, enjoying the French sun, and perhaps a swim in the grand pool, until late afternoon.</p>
+                      <p class="font-serif text-lg tracking-[0.05em]">Civil Wedding</p>
+                      <p class="text-lg leading-relaxed">We will exchange vows within the grounds of Hampton Court
+                        Palace, then cross the bridge for an intimate riverside reception at The Mitre Restaurant,
+                        looking over the Thames.</p>
                     </div>
                   </div>
                 </article>
               </div>
             </section>
 
-            <section id="garre-location" class="space-y-4">
+            <section id="hampton-location" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Location</h3>
-              <p class="text-lg">Château de Garrevaques sits just beyond Toulouse, about an hour’s drive into the
-                countryside. Once you leave the city behind, the road winds through sunflower fields, vineyards, and
-                olive trees, until the château reveals itself upon the peaceful outskirts.</p>
+              <p class="text-lg">Hampton Court Palace rests beside the River Thames in southwest London, famed for its
+                Tudor courtyards, Baroque façades, and expansive formal gardens. Wandering through its galleries and
+                cloisters gives the feeling of stepping back into royal history.</p>
+              <p class="text-lg leading-relaxed">Our reception will continue nearby at The Mitre Restaurant, just across
+                the road from the palace and overlooking the river.</p>
             </section>
 
-            <section id="garre-accommodation" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Accommodation</h3>
-              <p class="text-lg leading-relaxed">We have reserved the entire Hôtellerie du Lac, a charming lakeside inn
-                around fifteen minutes from the château, including beautiful, spacious rooms with several family suites.
-                The hotel has prepared a wedding arrangement for our guests. Kindly indicate your accommodation need in
-                the RSVP form, so we may reserve rooms accordingly.</p>
-            </section>
-
-            <section id="garre-travel" class="space-y-4">
+            <section id="hampton-travel" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Travel</h3>
-              <p class="text-lg leading-relaxed">For those requiring transportation, a shuttle from Toulouse may be
-                arranged at an additional cost, as indicated in the RSVP. Timings and pick-up details will follow.</p>
+              <p class="text-lg leading-relaxed">Hampton Court is an easy train ride from central London; direct services
+                from London Waterloo reach Hampton Court station in about 35 minutes, followed by a pleasant walk to the
+                palace and The Mitre. River boats, taxis, and rideshares are also available nearby.</p>
             </section>
 
-            <section id="garre-attire" class="space-y-4">
+            <section id="hampton-attire" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Dress Code</h3>
-              <p class="text-lg leading-relaxed">To match with the château's setting, we kindly request cocktail attire
-                of light summer tones, pastels and gentle florals. We would highly appreciate if guests could refrain
-                from wearing full black, full white, cream, or red colours.</p>
+              <p class="text-lg leading-relaxed">To suit the riverside setting, we kindly request cocktail attire in
+                airy blues, creams, or soft neutrals. We would highly appreciate if guests could refrain from wearing
+                full black, full white, cream, or red colours.</p>
             </section>
 
-            <section id="garre-plus-ones" class="space-y-4">
+            <section id="hampton-plus-ones" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Plus Ones</h3>
               <p class="text-lg leading-relaxed">With heartfelt thanks for your understanding, we can only host the
                 guests invited.</p>
             </section>
 
-            <section id="garre-pets" class="space-y-4">
+            <section id="hampton-pets" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Our Furry Friends</h3>
               <p class="text-lg leading-relaxed">With regret, we must ask that pets not attend the celebrations. Kindly
-                note that our venue and accommodation are pet-free.</p>
+                note that our venue is pet-free.</p>
             </section>
 
             <section id="garre-rsvp" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">RSVP By 11.01.26</h3>
               <p class="text-lg leading-relaxed">Kindly complete the RSVP form at the bottom right of the page by 11
-                January 2026, indicating the days you will join us, along with any accommodation or transport you may
-                require. Please fill one RSVP per person.</p>
+                January 2026, letting us know you will join us on 2 June and if you have any transport notes. Please
+                fill one RSVP per person.</p>
             </section>
 
-            <section id="garre-newsletter" class="space-y-4">
+            <section id="hampton-newsletter" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Newsletter</h3>
               <p class="text-lg leading-relaxed">As our celebrations draw nearer, we wish to keep you informed with
                 further details about us, our wedding, and the order of events.</p>
@@ -435,8 +417,8 @@
 
         </main>
 
-        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto mt-6 w-96 opacity-70"
-          style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.655) contrast(3.3);">
+        <img src="../pv_separator.png" alt="" aria-hidden="true" class="mx-auto mt-6 w-96 opacity-70"
+          style="filter: saturate(0.78) hue-rotate(7deg) brightness(0.7) contrast(3.2);">
 
         <footer class="mt-6 text-center text-xs uppercase tracking-[0.35em] text-ink/70 space-y-2 font-sans">
           <p>&copy; June 2026 Parniyan &amp; Vincent</p>
@@ -478,7 +460,7 @@
   <button data-open-rsvp data-sticky-rsvp
     class="sticky-rsvp fixed right-4 bottom-4 sm:right-6 sm:bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card hover:bg-ink">RSVP</button>
 
-  <script src="script.js?v=3" defer></script>
+  <script src="../script.js?v=3" defer></script>
 </body>
 
 </html>
