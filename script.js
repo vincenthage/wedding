@@ -14,7 +14,7 @@
       return;
     }
     let timerId;
-    const zeroValues = ['00d','00h','00m','00s'];
+    const zeroValues = ['00d','00h','00m'];
     function tick(){
       const now = new Date();
       const diff = target - now;
@@ -28,11 +28,9 @@
       const days = Math.floor(diff/86400000);
       const hours = Math.floor((diff%86400000)/3600000);
       const minutes = Math.floor((diff%3600000)/60000);
-      const seconds = Math.floor((diff%60000)/1000);
       spans[0].textContent = String(days).padStart(2,'0')+'d';
       spans[1].textContent = String(hours).padStart(2,'0')+'h';
       spans[2].textContent = String(minutes).padStart(2,'0')+'m';
-      spans[3].textContent = String(seconds).padStart(2,'0')+'s';
     }
     tick();
     timerId = setInterval(tick,1000);
