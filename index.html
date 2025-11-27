@@ -107,27 +107,7 @@
     }
 
     .envelope-flowers {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-    }
-
-    .envelope-flowers span {
-      width: 26%;
-      background-image: url('invitation borders.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 0.8;
-      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18)) saturate(1.4) hue-rotate(161deg) brightness(0.72) contrast(2.1);
-      transform: scaleX(-1);
-    }
-
-    .envelope-flowers span:last-child {
-      background-position: center center;
-      transform: scaleX(1);
+      display: none;
     }
 
     .envelope-flap {
@@ -140,7 +120,7 @@
       transform: rotateX(0deg);
       transition: transform var(--flap-duration) cubic-bezier(0.23, 1, 0.32, 1) var(--flap-delay);
       box-shadow: inset 0 -18px 28px rgba(43, 50, 77, 0.08);
-      overflow: hidden;
+      overflow: visible;
       z-index: 3;
     }
 
@@ -155,24 +135,37 @@
     }
 
     .envelope-flap::after {
+      content: none;
+    }
+
+    .envelope-shell::after {
       content: "";
       position: absolute;
-      left: 22%;
-      right: 22%;
-      top: 8%;
-      bottom: 34%;
-      background: url(Hero.png) center/contain no-repeat;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
+      width: 140px;
+      height: 140px;
+      background: url('pv wax seal.png') center/contain no-repeat;
+      filter: drop-shadow(0 12px 18px rgba(43, 50, 77, 0.25));
+      z-index: 5;
+      transition:
+        opacity calc(var(--flap-duration) / 2) ease var(--flap-delay),
+        transform calc(var(--flap-duration) / 2) ease var(--flap-delay);
       opacity: 1;
-      filter: drop-shadow(0 20px 35px rgba(43, 50, 77, 0.18)) saturate(0.7) hue-rotate(160deg) brightness(0.599) contrast(5.9);
       pointer-events: none;
-      z-index: 3;
+    }
+
+    .envelope-shell.envelope-open::after {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.92);
     }
 
     .envelope-card {
       position: relative;
-      margin: 12% auto 5%;
-      width: 70%;
-      max-width: 880px;
+      margin: 8% auto 4%;
+      width: 86%;
+      max-width: 960px;
       aspect-ratio: 1 / 1;
       background: #fefbf6 url('grainy.png') repeat;
       border-radius: 8px;
@@ -358,7 +351,7 @@
                   <div class="space-y-6">
                     <div class="space-y-1">
                       <p class="font-serif text-lg tracking-[0.05em]">Welcoming</p>
-                      <p class="text-lg leading-relaxed">In the late afternoon, we shall gather to welcome you. Upon arrival, we invite you to join us in the gardens for a gentle reception, to begin the celebration and kindle the spirits for the days to follow.</p>
+                      <p class="text-lg leading-relaxed">In the late afternoon, we shall be pleased to host a welcoming gathering in the beautiful gardens of the château, to mark the beginning of our celebrations and kindle the spirits for the days to follow.</p>
                     </div>
                   </div>
                 </article>
@@ -368,7 +361,7 @@
                   <div class="space-y-6">
                     <div class="space-y-1">
                       <p class="font-serif text-lg tracking-[0.05em]">Wedding</p>
-                      <p class="text-lg leading-relaxed">At the château, on this most special of days, we shall exchange our vows and be proclaimed husband and wife. We eagerly await your cheers and champagne toasts to our new title, before we dance and make merry long into the night.</p>
+                      <p class="text-lg leading-relaxed">At the château, on this most special of days, we will exchange our vows and be proclaimed husband and wife. We eagerly await your cheers and champagne toasts to our new title, before we dance and make merry long into the night.</p>
                     </div>
                   </div>
                 </article>
@@ -377,8 +370,8 @@
                   <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Friday • June 19</div>
                   <div class="space-y-6">
                     <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Reminiscing</p>
-                      <p class="text-lg leading-relaxed">On the following morning, we should be delighted to celebrate the first day of our marriage with you once more in the gardens of our beautiful château, lingering beneath the shade of the trees, enjoying the French sun, and perhaps a swim in the grand pool, until the late afternoon.</p>
+                      <p class="font-serif text-lg tracking-[0.05em]">Post-wedding</p>
+                      <p class="text-lg leading-relaxed">On the following morning, we will rejoice in celebrating the first day of our marriage with you once more in the château’s grounds, lingering beneath the shade of the trees, enjoying the French sun, and perhaps a swim in the grand pool, until late afternoon.</p>
                     </div>
                   </div>
                 </article>
@@ -408,9 +401,9 @@
 
             <section id="garre-attire" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Dress Code</h3>
-              <p class="text-lg leading-relaxed">We kindly request cocktail attire in our suggested palette. Please
-                refrain from wearing full black, white, red, or cream, as those hues are reserved for the wedding party.
-                A colour inspiration and further recommendations will be shared in our FAQs.</p>
+              <p class="text-lg leading-relaxed">To match with the château's setting, we kindly request cocktail attire
+                of light summer tones, pastels and gentle florals. We would highly appreciate if guests could refrain
+                from wearing full black, full white, cream, or red colours.</p>
             </section>
 
             <section id="garre-plus-ones" class="space-y-4">
@@ -426,16 +419,16 @@
             </section>
 
             <section id="garre-rsvp" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">RSVP By 05.01.26</h3>
-              <p class="text-lg leading-relaxed">Kindly complete the RSVP form at the bottom right of the page by <strong>05
-                  January 2026</strong>, indicating the days you will join us, along with any accommodation or transport
-                you may require. This will serve as your RSVP.</p>
+              <h3 class="text-3xl font-display tracking-[0.2em] text-left">RSVP By 11.01.26</h3>
+              <p class="text-lg leading-relaxed">Kindly complete the RSVP form at the bottom right of the page by 11
+                January 2026, indicating the days you will join us, along with any accommodation or transport you may
+                require. Please fill one RSVP per person.</p>
             </section>
 
             <section id="garre-newsletter" class="space-y-4">
               <h3 class="text-3xl font-display tracking-[0.2em] text-left">Newsletter</h3>
-              <p class="text-lg leading-relaxed">As our celebrations draw nearer, we shall keep you informed with further
-                details about us, our wedding, and the order of events.</p>
+              <p class="text-lg leading-relaxed">As our celebrations draw nearer, we wish to keep you informed with
+                further details about us, our wedding, and the order of events.</p>
             </section>
 
           </div>

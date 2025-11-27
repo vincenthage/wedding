@@ -123,6 +123,7 @@
   const modalClose = rsvpModal?.querySelector('[data-modal-close]');
   const modalOverlay = rsvpModal?.querySelector('[data-modal-overlay]');
   const rsvpOpeners = document.querySelectorAll('[data-open-rsvp]');
+  const stickyRsvp = document.querySelector('[data-sticky-rsvp]');
   const fallbackSection = document.querySelector('#garre-rsvp');
   let lastFocused;
 
@@ -159,6 +160,7 @@
     rsvpModal.classList.remove('is-visible');
     rsvpModal.classList.remove('opacity-100');
     rsvpModal.classList.add('pointer-events-none','opacity-0');
+    stickyRsvp?.classList.remove('hidden');
     envelopeShell?.classList.remove('envelope-open');
     rsvpModal.setAttribute('aria-hidden','true');
     document.body.classList.remove('overflow-hidden');
@@ -188,6 +190,7 @@
       scrollToFallback();
       return;
     }
+    stickyRsvp?.classList.add('hidden');
     lastFocused = document.activeElement;
     rsvpModal.classList.remove('hidden','pointer-events-none','opacity-0');
     requestAnimationFrame(()=>{
