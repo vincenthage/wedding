@@ -1,484 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parniyan & Vincent · Celebration Wedding</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parniyan & Vincent · Coming Soon</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Parisienne:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <script src="tailwind.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: 'rgb(77, 43, 43)',
-            powder: '#ad6a6a',
-            periwinkle: '#bfc6df',
-            lavender: '#e6e3f3',
-            cream: '#f6f3ee',
-            gold: '#b7a78f'
-          },
-          fontFamily: {
-            serif: ['"Cormorant Garamond"', 'serif'],
-            display: ['"Parisienne"', 'serif'],
-            script: ['"Great Vibes"', 'cursive'],
-            sans: ['Raleway', 'sans-serif']
-          },
-          boxShadow: {
-            card: '0 25px 55px rgba(43, 50, 77, 0.08)'
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --envelope-cream: #f7f4ee;
-      --envelope-ink: rgb(77, 43, 45);
-      --envelope-powder: #ad6a6a;
-      --envelope-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
-      --envelope-cranberry: rgba(125, 43, 43, 0.1);
+      --ink: rgb(34, 54, 94);
+      --bg: #f7f9fd;
     }
-
-    .tally-powered {
-      display: none !important;
-    }
-
-    .sticky-rsvp {
-      z-index: 60;
-      touch-action: manipulation;
-    }
-
-    .envelope-scene {
-      perspective: 2200px;
-      opacity: 0;
-      transform: translateY(24px) scale(0.97);
-      transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .rsvp-modal.is-visible .envelope-scene {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    .envelope-shell {
-      position: relative;
-      --card-delay: 0s;
-      --flap-duration: 3s;
-      --flap-delay: 1s;
-      background: linear-gradient(145deg, #fcfaf6, #f0ebe2), url('grainy.png');
-      background-blend-mode: multiply;
-      border: solid 6px var(--envelope-cranberry);
-      box-shadow: var(--envelope-shadow);
-      overflow: visible;
-      max-width: 620px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 0 0 14px 14px;
-      overflow: visible;
-    }
-
-    .envelope-shell::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 24%;
-      background: linear-gradient(180deg, #f8f6f2, #e8e2d8);
-      clip-path: polygon(2% 0, 98% 0, 94% 100%, 6% 100%);
-      z-index: 1;
-    }
-
-    .envelope-liner {
-      position: absolute;
-      inset: 0 0 auto;
-      height: 80%;
-      background: linear-gradient(145deg, rgba(252, 250, 246, 0.95), rgba(237, 232, 221, 0.9));
-      clip-path: polygon(0 0, 50% 30%, 100% 0, 100% 100%, 0 100%);
-      border: 1px solid rgba(43, 50, 77, 0.08);
-      border-radius: 0 0 12px 12px;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .envelope-flowers {
-      display: none;
-    }
-
-    .envelope-flap {
-      position: absolute;
-      inset: 0;
-      height: 62%;
-      background: linear-gradient(160deg, #f8f6f2, #e8e2d8);
-      clip-path: polygon(0 0, 50% 86%, 100% 0);
-      transform-origin: top center;
-      transform: rotateX(0deg);
-      transition: transform var(--flap-duration) cubic-bezier(0.23, 1, 0.32, 1) var(--flap-delay);
-      box-shadow: inset 0 -18px 28px rgba(43, 50, 77, 0.08);
-      overflow: visible;
-      z-index: 3;
-    }
-
-    .envelope-flap::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      clip-path: polygon(0 0, 50% 86%, 100% 0);
-      border: solid 6px var(--envelope-cranberry);
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .envelope-flap::after {
-      content: none;
-    }
-
-    .envelope-shell::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 52%;
-      transform: translate(-50%, -50%);
-      width: 140px;
-      height: 140px;
-      background: url('pv wax seal.png') center/contain no-repeat;
-      filter: drop-shadow(0 12px 18px rgba(43, 50, 77, 0.25));
-      z-index: 5;
-      transition:
-        opacity calc(var(--flap-duration) / 2) ease var(--flap-delay),
-        transform calc(var(--flap-duration) / 2) ease var(--flap-delay);
-      opacity: 1;
-      pointer-events: none;
-    }
-
-    .envelope-shell.envelope-open::after {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.92);
-    }
-
-    .envelope-card {
-      position: relative;
-      margin: 8% auto 4%;
-      width: 86%;
-      max-width: 960px;
-      aspect-ratio: 1 / 1;
-      background: #fefbf6 url('grainy.png') repeat;
-      border-radius: 8px;
-      box-shadow: 0 0 3px 0 rgba(43, 50, 77, 0.22);
-      transform: translateY(32px);
-      opacity: 0;
-      pointer-events: none;
-      transition:
-        transform 1.6s cubic-bezier(0.23, 1, 0.32, 1) var(--card-delay),
-        box-shadow 1.6s cubic-bezier(0.23, 1, 0.32, 1) var(--card-delay),
-        opacity 0.4s ease var(--card-delay);
-      border: 1px solid rgba(43, 50, 77, 0.08);
-      z-index: 2;
-    }
-
-    .envelope-card::before {
-      content: none;
-    }
-
-    .envelope-card-inner {
-      position: relative;
-      padding: 16px 18px 16px;
-      background: transparent;
-      border-radius: 8px;
-      height: 100%;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 20% 20%, rgba(136,168,210,0.25), transparent 45%),
+                  radial-gradient(circle at 80% 25%, rgba(120,146,196,0.2), transparent 50%),
+                  radial-gradient(circle at 35% 80%, rgba(100,140,190,0.18), transparent 48%),
+                  var(--bg);
+      font-family: "Cormorant Garamond", serif;
+      color: var(--ink);
+      padding: 1.5rem;
     }
-
-    .envelope-card-inner::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 140px;
-      background: #fefbf6 url('grainy.png') repeat;
-      pointer-events: none;
-      z-index: 3;
+    .card {
+      text-align: center;
+      background: rgba(255,255,255,0.85);
+      padding: 2.5rem 2rem 2.2rem;
+      border-radius: 18px;
+      box-shadow: 0 25px 70px rgba(34, 54, 94, 0.14);
+      border: 1px solid rgba(34, 54, 94, 0.08);
+      max-width: 520px;
+      width: 100%;
     }
-
-    .tally-cover {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      height: 48px;
-      background: #fefbf6 url('grainy.png') repeat;
-      border-radius: 8px;
-      box-shadow: 0 -8px 14px rgba(43, 50, 77, 0.08);
-      pointer-events: all;
-      user-select: none;
-      cursor: default;
-      z-index: 30;
+    .seal {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 1.25rem;
+      background: url('images/pv wax seal.png') center/contain no-repeat;
+      filter: saturate(0.85) drop-shadow(0 12px 18px rgba(34, 54, 94, 0.25));
     }
-
-    .envelope-open .envelope-flap {
-      transform: rotateX(-136deg) translateY(-1%);
+    h1 {
+      margin: 0;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
     }
-
-    .envelope-shell.envelope-open {
-      --card-delay: calc(var(--flap-duration) + var(--flap-delay) + 0.1s);
-    }
-
-    .envelope-open .envelope-card {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(-22px);
-      box-shadow: 0 30px 70px rgba(43, 50, 77, 0.22);
-    }
-
-    .rsvp-modal.is-visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .envelope-flap,
-      .envelope-card {
-        transition-duration: 160ms;
-      }
-
-      .envelope-shell.envelope-open {
-        --card-delay: 0s;
-        --flap-duration: 160ms;
-        --flap-delay: 0s;
-      }
-
-      .envelope-scene {
-        transition-duration: 160ms;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .envelope-card {
-        width: 92%;
-        margin: 12% auto 5%;
-        aspect-ratio: 5 / 6;
-        min-height: 380px;
-      }
-
-      .envelope-card-inner {
-        padding: 12px 14px;
-      }
-
-      .hero-date {
-        gap: 0.15rem;
-        margin-top: 1rem;
-      }
+    p {
+      margin: 0.75rem 0 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
     }
   </style>
 </head>
-
-<body class="min-h-screen font-serif text-[rgb(77,43,43)] bg-white bg-[url('grainy.png')] bg-repeat relative">
-  <a href="#main"
-    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-white px-4 py-2 rounded-md z-50">Skip
-    to content</a>
-  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0 opacity-70"
-      style="background:radial-gradient(circle at 12% 20%, rgba(191,199,178,.35), transparent 55%), radial-gradient(circle at 85% 25%, rgba(206,181,160,.25), transparent 60%), radial-gradient(circle at 25% 80%, rgba(153,178,153,.2), transparent 55%);">
-    </div>
-  </div>
-  <div class="page-frame min-h-screen flex justify-center px-4 sm:px-5 pt-6 pb-6">
-    <div
-      class="frame-shell relative w-full max-w-[1000px] rounded-[2.5rem] bg-[url('grainy.png')] px-4 sm:px-5 lg:px-6 py-8 shadow-[0_25px_75px_rgba(43,50,77,0.18)]">
-      <div class="edge-flowers pointer-events-none absolute top-3 bottom-6 left-0 right-0 flex justify-between"
-        aria-hidden="true">
-        <span
-          class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"
-          style="filter: saturate(0.789) hue-rotate(161deg) brightness(0.9) contrast(1.7);"></span>
-        <span
-          class="w-10 sm:w-20 lg:w-44 bg-[url('flower_border.png')] bg-repeat-y bg-contain drop-shadow-[0_35px_55px_rgba(43,50,77,0.3)]"
-          style="transform:scaleX(-1);filter: saturate(0.789) hue-rotate(161deg) brightness(0.9) contrast(1.7);"></span>
-      </div>
-
-      <div class="site-wrap relative z-10 mx-auto w-full max-w-2xl px-10 sm:px-12 lg:px-14 pb-20 pt-2">
-        <header class="mb-6"></header>
-        <main id="main" class="space-y-16">
-          <div class="venue is-active space-y-16" id="venue-garre">
-            <section id="garre-cover" class="hero relative px-6 sm:px-14 pt-2 pb-0 text-center">
-              <img src="Hero.png" alt="Parniyan and Vincent crest"
-                class="mx-auto mb-4 w-full max-w-[24rem] sm:max-w-[30rem] lg:max-w-[36rem] object-contain drop-shadow-[0_18px_55px_rgba(43,50,77,0.28)]"
-                style="filter: saturate(0.657) hue-rotate(160deg) brightness(0.64) contrast(4.2);">
-              <p class="mt-2 text-base sm:text-lg font-serif uppercase tracking-[0.2em] text-ink leading-relaxed">
-                <span class="block">REQUEST THE HONOR</span>
-                <span class="block">OF YOUR PRESENCE AT THE</span>
-                <span class="block">CELEBRATION OF OUR EXQUISITE WEDDING AT</span>
-                <span class="block">CHÂTEAU DE GARREVAQUES</span>
-              </p>
-              <h1 class="sr-only">Parniyan &amp; Vincent</h1>
-              <div
-                class="hero-date mt-14 flex flex-col items-center justify-center gap-1 text-ink/80 text-2xl sm:text-3xl tracking-[0.45em] font-serif font-semibold">
-                <span class="font-display font-normal tracking-[0.2em] text-3xl sm:text-4xl">June</span>
-                <span class="text-powder">17·18·19</span>
-                <span class="text-ink/70">2026</span>
-              </div>
-              <div
-                class="countdown mt-6 flex items-center justify-center gap-1 text-1xl sm:text-3xl uppercase tracking-[0.45em] font-serif font-semibold text-powder"
-                data-countdown="2026-06-17T16:00:00+02:00">
-                <span class="px-1">00d</span>
-                <span class="px-1">00h</span>
-                <span class="px-1">00m</span>
-              </div>
-            </section>
-            <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto my-0 mb-16 mt-16 w-96 opacity-80"
-              style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.655) contrast(3.3);">
-
-            <section id="garre-hello" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">A Gentle Invitation</h3>
-              <p class="text-lg leading-relaxed">With the greatest pleasure, we look forward to welcoming our dearest family and friends to the countryside of the South of France for a celebration of our marriage. Expect days and nights brimming with joy, live music and laughter, followed by the finest cocktails, candlelit dining, and dancing long into the night. We kindly ask you to bring your brightest spirits and warmest energy, to accompany us in our festivities.</p>
-            </section>
-
-            <section id="garre-events" class="space-y-3">
-              <div class="space-y-1 text-left">
-                <h3 class="text-3xl font-display tracking-[0.2em] text-left">Events</h3>
-              </div>
-              <div class="grid gap-6">
-                <article class="relative space-y-4 pl-6">
-                  <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Wednesday • June 17</div>
-                  <div class="space-y-6">
-                    <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Welcoming</p>
-                      <p class="text-lg leading-relaxed">In the late afternoon, we shall be pleased to host a welcoming gathering in the beautiful gardens of the château, to mark the beginning of our celebrations and kindle the spirits for the days to follow.</p>
-                    </div>
-                  </div>
-                </article>
-                <article class="relative space-y-4 pl-6">
-                  <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Thursday • June 18</div>
-                  <div class="space-y-6">
-                    <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Wedding</p>
-                      <p class="text-lg leading-relaxed">At the château, on this most special of days, we will exchange our vows and be proclaimed husband and wife. We eagerly await your cheers and champagne toasts to our new title, before we dance and make merry long into the night.</p>
-                    </div>
-                  </div>
-                </article>
-                <article class="relative space-y-4 pl-6">
-                  <div class="absolute left-2 top-3 bottom-3 w-px bg-ink/10" aria-hidden="true"></div>
-                  <div class="text-sm font-sans uppercase tracking-[0.35em] text-powder">Friday • June 19</div>
-                  <div class="space-y-6">
-                    <div class="space-y-1">
-                      <p class="font-serif text-lg tracking-[0.05em]">Post-wedding</p>
-                      <p class="text-lg leading-relaxed">On the following morning, we will rejoice in celebrating the first day of our marriage with you once more in the château’s grounds, lingering beneath the shade of the trees, enjoying the French sun, and perhaps a swim in the grand pool, until late afternoon.</p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <section id="garre-location" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Location</h3>
-              <p class="text-lg">Château de Garrevaques sits just beyond Toulouse, about an hour’s drive into the
-                countryside. Once you leave the city behind, the road winds through sunflower fields, vineyards, and
-                olive trees, until the château reveals itself upon the peaceful outskirts.</p>
-            </section>
-
-            <section id="garre-accommodation" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Accommodation</h3>
-              <p class="text-lg leading-relaxed">We have reserved the entire Hôtellerie du Lac, a charming lakeside inn
-                around fifteen minutes from the château, including beautiful, spacious rooms with several family suites.
-                The hotel has prepared a wedding arrangement for our guests. Kindly indicate your accommodation need in
-                the RSVP form, so we may reserve rooms accordingly.</p>
-            </section>
-
-            <section id="garre-travel" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Travel</h3>
-              <p class="text-lg leading-relaxed">For those requiring transportation, a shuttle from Toulouse may be
-                arranged at an additional cost, as indicated in the RSVP. Timings and pick-up details will follow.</p>
-            </section>
-
-            <section id="garre-attire" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Dress Code</h3>
-              <p class="text-lg leading-relaxed">To match with the château's setting, we kindly request cocktail attire
-                of light summer tones, pastels and gentle florals. We would highly appreciate if guests could refrain
-                from wearing black, full white, cream, or red colours.</p>
-            </section>
-
-            <section id="garre-plus-ones" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Plus Ones</h3>
-              <p class="text-lg leading-relaxed">With heartfelt thanks for your understanding, we can only host the
-                guests invited.</p>
-            </section>
-
-            <section id="garre-pets" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Our Furry Friends</h3>
-              <p class="text-lg leading-relaxed">With regret, we must ask that pets not attend the celebrations. Kindly
-                note that our venue and accommodation are pet-free.</p>
-            </section>
-
-            <section id="garre-rsvp" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">RSVP By 11.01.26</h3>
-              <p class="text-lg leading-relaxed">Kindly complete the RSVP form at the bottom right of the page by 11
-                January 2026, indicating the days you will join us, along with any accommodation or transport you may
-                require. Please fill one RSVP per person.</p>
-            </section>
-
-            <section id="garre-newsletter" class="space-y-4">
-              <h3 class="text-3xl font-display tracking-[0.2em] text-left">Newsletter</h3>
-              <p class="text-lg leading-relaxed">As our celebrations draw nearer, we wish to keep you informed with
-                further details about us, our wedding, and the order of events.</p>
-            </section>
-
-          </div>
-
-        </main>
-
-        <img src="pv_separator.png" alt="" aria-hidden="true" class="mx-auto mt-6 w-96 opacity-70"
-          style="filter: saturate(0.7) hue-rotate(161deg) brightness(0.655) contrast(3.3);">
-
-        <footer class="mt-6 text-center text-xs uppercase tracking-[0.35em] text-ink/70 space-y-2 font-sans">
-          <p>&copy; June 2026 Parniyan &amp; Vincent</p>
-        </footer>
-      </div>
-    </div>
-  </div>
-
-  <div id="rsvpModal" aria-hidden="true"
-    class="rsvp-modal fixed inset-0 z-50 hidden opacity-0 pointer-events-none transition-opacity duration-500 ease-out">
-    <div data-modal-overlay class="absolute inset-0 bg-gradient-to-br from-ink/25 via-ink/15 to-powder/18"></div>
-    <div class="relative mx-auto flex min-h-full items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true"
-      aria-label="RSVP envelope">
-      <div class="relative w-full max-w-4xl" tabindex="-1">
-        <div class="envelope-scene">
-          <div class="envelope-shell aspect-[3/2] w-full">
-            <div class="envelope-flap"></div>
-            <div class="envelope-flowers" aria-hidden="true">
-              <span></span>
-              <span></span>
-            </div>
-            <div class="envelope-card">
-              <div class="envelope-card-inner">
-                <div class="invite-borders" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                </div>
-                <iframe data-tally-frame id="tallyModalFrame" title="RSVP form in envelope" loading="lazy"
-                  class="w-full h-full min-h-0 flex-1 border border-ink/5 bg-transparent shadow-card relative z-10"></iframe>
-                <div class="tally-cover" aria-hidden="true"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <button data-open-rsvp data-sticky-rsvp
-    class="sticky-rsvp fixed right-4 bottom-4 sm:right-6 sm:bottom-6 rounded-full bg-powder px-6 py-3 text-xs font-sans uppercase tracking-[0.35em] text-white shadow-card hover:bg-ink">RSVP</button>
-
-  <script src="script.js?v=3" defer></script>
+<body>
+  <main class="card" aria-label="Coming soon">
+    <div class="seal" aria-hidden="true"></div>
+    <h1>Coming Soon</h1>
+    <p>Our celebration site will be unveiled shortly.</p>
+  </main>
 </body>
-
 </html>
