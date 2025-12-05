@@ -1,4 +1,17 @@
 (function(){
+  const isPersian = (document.documentElement.lang || '').toLowerCase().startsWith('fa');
+  const persianDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+  const units = isPersian ? ['روز','ساعت','دقیقه'] : ['d','h','m'];
+  const spacer = isPersian ? ' ' : '';
+
+  function formatNumber(num){
+    const padded = String(num).padStart(2,'0');
+    if(!isPersian){
+      return padded;
+    }
+    return padded.replace(/\d/g, d => persianDigits[Number(d)] ?? d);
+  }
+
   // Countdown timers
   function startCountdown(el){
     const targetAttr = el.dataset.countdown;
@@ -14,12 +27,12 @@
       return;
     }
     let timerId;
-    const zeroValues = ['00d','00h','00m'];
+    const zeroValues = units.map(unit => formatNumber(0) + spacer + unit);
     function tick(){
       const now = new Date();
       const diff = target - now;
       if(diff <= 0){
-        spans.forEach((s,idx)=>{ s.textContent = zeroValues[idx] || '00'; });
+        spans.forEach((s,idx)=>{ s.textContent = zeroValues[idx] || formatNumber(0); });
         if(timerId){
           clearInterval(timerId);
         }
@@ -28,9 +41,9 @@
       const days = Math.floor(diff/86400000);
       const hours = Math.floor((diff%86400000)/3600000);
       const minutes = Math.floor((diff%3600000)/60000);
-      spans[0].textContent = String(days).padStart(2,'0')+'d';
-      spans[1].textContent = String(hours).padStart(2,'0')+'h';
-      spans[2].textContent = String(minutes).padStart(2,'0')+'m';
+      spans[0].textContent = formatNumber(days) + spacer + units[0];
+      spans[1].textContent = formatNumber(hours) + spacer + units[1];
+      spans[2].textContent = formatNumber(minutes) + spacer + units[2];
     }
     tick();
     timerId = setInterval(tick,1000);
@@ -56,7 +69,7 @@
       'LOCATION:'+location,
       'END:VEVENT',
       'END:VCALENDAR'
-    ].join('\\r\\n');
+    ].join('\r\n');
   }
   function downloadICS(data){
     const blob = new Blob([data],{type:'text/calendar'});
@@ -83,7 +96,7 @@
   // RSVP embed + envelope modal
   const TALLY_BASE = (document.body?.dataset?.tallyBase) || "https://tally.so/r/rj552L";
   const DISPLAY_PARAMS = "transparentBackground=1&hideTitle=1&hideBranding=1&hideFooter=1";
-  const qs = window.location.search.replace(/^\\?/,'');
+  const qs = window.location.search.replace(/^\?/,'');
   const tallyGlue = (qs && DISPLAY_PARAMS) ? '&' : '';
   const tallyUrl = TALLY_BASE + (qs ? ('?' + qs) : '') + (DISPLAY_PARAMS ? ((qs ? tallyGlue : '?') + DISPLAY_PARAMS) : '');
 
