@@ -81,7 +81,7 @@
   });
 
   // RSVP embed + envelope modal
-  const TALLY_BASE = (document.body?.dataset?.tallyBase) || "https://tally.so/r/rj552L";
+  const TALLY_BASE = (document.body?.dataset?.tallyBase) || "https://tally.so/r/me4zkO";
   const DISPLAY_PARAMS = "transparentBackground=1&hideTitle=1&hideBranding=1&hideFooter=1";
   const qs = window.location.search.replace(/^\\?/,'');
   const tallyGlue = (qs && DISPLAY_PARAMS) ? '&' : '';
